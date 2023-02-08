@@ -38,6 +38,7 @@ CUI디렉터리(=GUI의폴더) 구성
 etc는 설정 파일 저장 디렉터리 , home은 유저가 잘 사용하는 디렉터리, var은 어플케이션이 관리하는 데이터 저장하는 디렉터리로 웹 사이트 데이터베이스의 데이터 log 파일을 저장하는데 사용한다.
 한 하위 서브디렉터리(Ex dotinstall)로 유저가 로그인했을 때, dotinstall 디렉터리는 dotinstall 유저의 hoem 디렉터리라고 한다.
 또한 bin , sbin에는 커맨드용 실행 파일이 들어가는 디렉터리, tmp는 임시 파일 저장 디렉터리
+\*root 루트는 관리자를 의미한다.
 
 디렉터리 명령 표현 방법
 :
@@ -86,19 +87,89 @@ ls
   문자 범위 예컨대 a부터 g까지 시작하는 항목을 6글자 항목을 표시하고 싶으면 []안에 넣으면 된다. Ex) ls -l [a-g]?????
   글자 수 범위 안하면 ls -l [a-g]_ // p 또는 s 의 경우 ls -l [ps]?????
   특정 문자열을 가지고 있는 것은 {}로 추출한다. ls -l {sh,ho}\*
+* -rw-r--r-- 1 khk36 staff 과 같이 처음 나온 부분은 접근 권한 관련 내용이다. 10글자 중 첫글자는 파일의 종률를 의미한다.
+  // -면 일반 파일 , d면 디렉터리, 1 이면 심볼릭이 된다.
+  이후 3문자씩 각각 소유 유저의 접근 권한, 소유 그룹의 접근 권한, 다른 사용자의 액세스 권한이 된다.
+  r은 읽기 권한 w는 쓰기 권한 x는 실행 가능을 의미한다. 즉 위의 파일은 소유 유저(khk36)는 읽고 쓰고 가능 그룹(staff)과 다른 사용자는 읽기만 가능을 의미한다.
+* chmod 커맨드로 접근 권한을 변경할 수 있다. 유저 부분(u) 그룹 부분(g) 다른 사용자 부분(o)로 표시하고 전부를 a로 표시한다 => chmod a=rwxrwxrwx index.html or chmod g=rw, o=rw index.html 로 쓴다.
+  => 숫자로도 표시 가능하다. r 2^2 w 2^1 x 2^0이 된다. chmod 777 index.html == chmod rwxrwxrwx index.html
 
 touch
 
 > 파일 생성을 위한 입력어 Ex) touch index.html
+> 하위 디렉터리에 파일 생성도 가능 Ex) touch mysite/css/style.css
+> 내부 파일까지 복사 된다.
 
 cp
 
-> 파일을 복사하는 경우 Ex) cp index.html profile.html
+> 파일을 복사하는 경우 Ex) cp index.html profile.html \*디렉터리를 복사하고 싶은 경우 옵션 -r을 이용한다. Ex) cp -r mysite/ myprofile
+> Ex) cp /etc/services . => 현 위치에 복사해줙
 
 mv
 
-> 이름을 바꾸는 경우 Ex) mv profile.html about.html => profile > about
+> 이름을 바꾸는 경우 Ex) mv profile.html about.html => profile > about \*폴더 이름도 바뀌는 거 가능
 
 rm
 
 > 파일을 삭제하는 입력어 Ex) rm about.html
+> 폴더 내부까지 전부 삭제하는 경우 옵션 -r을 사용 Ex) rm -r myprofile/
+
+mkdir
+
+> 디렉터리를 만드는 입력어 EX) mkdir mysite \*같은 디렉터리 안에 있는 파일과 폴더에서, 그 파일을 폴더에 넣는 입력 Ex) mv index.html mysite/ \*옵션 ls -p 하고 디렉터리를 만들면 계층으로 만들 수 있다. Ex) mkdir -p mysite/css
+
+rmdir
+
+> 디렉터리를 삭제하는 명령어 Ex) rmdir myprofile/ \*단, 디렉터리 안이 비어있어야 사용이 가능하다.
+
+ln
+
+> (심볼릭)폴더의 별명을 만들어서 상위 디렉터리를 이용하지 않고 바로 이동할 수 있도록 한다. 파일에도 사용가능
+> Ex) ln -s myapp/css/common/ mycommon
+
+- rm 별명 > 심볼릭 제거 가능
+
+cat
+
+> 파일의 내용을 읽기 위해 사용 Ex) cat (파일명)
+
+more
+
+> 파일 정보 읽는 걸 페이지 별로 하고 싶은 경우 사용 Ex) more (파일명) // 페이지를 이동하는 경우 스페이스바를 누른다.
+> q를 누르면 종료 가능하다.
+
+less
+
+> more과 같이 파일 정보를 페이지 별로 읽을 수 있도록 한다. /(파일명)을 치면 그 파일 위치를 찾아주고. n을 입력하면 다음 그 파일 이름 위치를 찾아준다.
+
+wc
+
+> 파일 내 행의 수 / 단어의 수/ 바이트의 수 / 파일 명을 출력해줌
+> wc -l 의 경우 행의 수만 표시 됨
+
+head
+
+> 파일 앞 부분만 보고 싶은 경우 head -(보고싶은 행의 수) 파일명 입력
+> Ex) head -3 services
+
+tail
+
+> head 와 정 반대 파일 뒷 부분만 보고싶은 경우
+
+history
+
+> 입력한 명령어 기록을 확인 => !3 세번째 명령어 실행 // !! 직전 명령 실행 // !-2 2개 전의 명령을 실행 \*직전 명령에서 사용된 인수는 !$로 표시할 수 있다. Ex) cd /etc/ 한 뒤 cd !$ 하면 cd /etc/를 의미한다.
+
+- !pw를 치면 최근 친 명령어 중 pw로 시작되는 명령어를 실행할 수 있다. + :p를 치면 실행하지 않고 명령 표시만 하는 것도 가능하다.
+
+* ctrl + R 누르면 검색도 가능하다. 또 ctrl + R을 누르면 다음 후보로 이동 할 수 있다.
+
+유닉스 유저 관리
+
+cat /etc/passwd
+
+> 첫 부분이 이름 : 암호 : 사용자 ID : 사용자 그룸 ID : 주석 : 홈 디렉터리 위치 및 쉘 명령어 // 로 표시됨
+
+groups ~~
+
+> 유저 ~~가 속한 그룹을 확인할 수 있다. // 루트의 경우 권한이 필요함
