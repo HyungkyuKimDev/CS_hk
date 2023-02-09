@@ -92,7 +92,7 @@ ls
   이후 3문자씩 각각 소유 유저의 접근 권한, 소유 그룹의 접근 권한, 다른 사용자의 액세스 권한이 된다.
   r은 읽기 권한 w는 쓰기 권한 x는 실행 가능을 의미한다. 즉 위의 파일은 소유 유저(khk36)는 읽고 쓰고 가능 그룹(staff)과 다른 사용자는 읽기만 가능을 의미한다.
 * chmod 커맨드로 접근 권한을 변경할 수 있다. 유저 부분(u) 그룹 부분(g) 다른 사용자 부분(o)로 표시하고 전부를 a로 표시한다 => chmod a=rwxrwxrwx index.html or chmod g=rw, o=rw index.html 로 쓴다.
-  => 숫자로도 표시 가능하다. r 2^2 w 2^1 x 2^0이 된다. chmod 777 index.html == chmod rwxrwxrwx index.html
+  => 숫자로도 표시 가능하다. r 2^2 w 2^1 x 2^0이 된다. chmod 777 index.html == chmod rwxrwxrwx index.html => +-를 이용해서도 가능 chomd g+x,o-r index.html
 
 touch
 
@@ -173,3 +173,53 @@ cat /etc/passwd
 groups ~~
 
 > 유저 ~~가 속한 그룹을 확인할 수 있다. // 루트의 경우 권한이 필요함
+
+sudo
+
+> 루트 사용자의 권한을 일시적으로 이용하는 입력어
+
+- vi
+
+> UNIX의 편집기 i를 누르면 편집 모드가 된다. 명령 모드로 돌아가려면 esc 키를 누르면 된다. 종료는 :q이다.
+
+- #!/bin/ash => #!는 이 다음 작성되는 프로그램을 실행하라는 의미가 된다.
+  echo 'hello There!' => echo는 문자열을 표시하는 커맨드 이고, 문자열에 공백이 있는 경우 ''을 이용한다.
+
+- 저장하고 싶은 경우 :wq , 저장하고 싶지 않은 경우 :q! 가 된다.
+- 커맨드 줄 삭제는 대문자 D
+
+- 커맨드를 실행할 떄는 해당 위치를 정확하게 표시하는 편이 좋다. Ex) ./hello
+- 커맨드를 찾는 건 환경 변수라는 구조로 관리되어 있고, echo $PATH를 통해 확인할 수 있다.
+- export 환경 변수를 설정하기 위한 명령어 Ex) export PATH=/home/dotinstall:$PATH
+  => PATH라는 이름의 디렉터리와 설정되어 있는 $PATH의 내용을 연결해 설정하라
+  => 이렇게 하면 환경 변수 $PATH에 /home/dotinstall가 추가된다.
+  => 이후 이 커맨드는 해당 위치가 아니라 그냥 명령어를 입력해도 실행이 가능해진다. hello
+- 디렉터리나 파일을 찾는 법은 which ~ 하면 된다.
+
+- echo 'date' 하면 date 문자열이 입력된다. 이 문자열을 파일에 넣고 싶으면 echo 'date' > commands.txt하면 된다.
+- 또 다른 echo로 문자열을 입력하면 파일에 덮어쓰기가 된다. 덮어쓰기 하지 않고 다음 행에 넣고 싶으면 >> 를 사용한다.
+- 다른 쉘 커맨드 넣는 것도 가능하다. /bin/ash < commands.txt
+- 추가로 이걸 파일에 넣고 싶으면 /bin/ash < commands.txt > results.txt
+
+파이프(パイプ）
+
+- 명령 실행의 결과를 파일이 아닌 다른 명령에 전달하는 방법 명령 사이에 | 을 사용한다.
+
+* Ex) /etc 속성을 찾고 여기서 'sudo' 문자열 포함 행을 분류하고 싶으면 가각 ls -l /etc , grep 'sudo'이다.
+  이걸 한번에 하려면 | 를 써서, ls -l /etc/ | grep 'sudo'
+* 파이프는 여러 개도 가능하며 마지막에 파일에 저장하고 싶으면 > 파일명 하면 된다.
+
+브레이스 전개(ブレイス展開）
+
+> echo {1..10}{a..g} ＝＞ 1a 1b 1c .. 1g 2a .. 10g 이렇게 출력이 된다.
+
+- mkdir test && cd test => test 디렉터리를 만들어서 이동하라
+- mkdir app{1..5} 하면 app1 app2 .. app5 까지 디렉터리가 생성된다.
+- 파일의 경우도 동일한데 touch app{1..5}/test{1..3}{.jpg,.png,.gif} => app 폴더 1~5 까지 만들고 각각 폴더 안에는 test1.jpg , test1.png, test1.gif ~~ test3.png 까지 생성된다.
+
+find
+
+> 파일 검색 명령어 Ex) find test -name 'app.pmg' => test 폴더에서 이름이 app.png 인 거 찾기
+
+- 와일드카드를 쓰면 Ex) find test -name 'appl\*'
+- 마지막에 -type f 를 쓰면 파일만 검색 -type d 면 폴더만 검색
