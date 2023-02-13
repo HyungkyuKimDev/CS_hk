@@ -72,3 +72,30 @@ git diff
 git rm
 
 > 깃에서는 단순히 rm mv로 파일을 삭제하지 않고. git rm / git rv를 사용항 (이동 삭제의 경우 )
+
+git commit --amend
+
+> 깃에서 변경 사항을 굳이 커밋 메세지에 남길 필요가 없을 경우 git add 한 뒤 git commit --amend 한다. 이후 커밋 메세지 변경 여부를 물어본다. :wq 입력하면 마무리
+
+git reset
+
+> 깃을 이전 상태로 돌리기 위해서 사용
+
+- git reset --hard HEAD // 깃을 헤드로 돌린다, 헤드(가장 최신 버전)
+- git reset --hard HEAD^ // 깃 헤드 바로 직전 버전으로 돌린다.
+- git reset --hard ~(commit ID 최소 7자리) 입력 // 깃을 그 커밋 아이디 버전으로 돌아간다.
+- git reset --hard ORIG_HEAD // 가장 최근 변경되 버젼으로 돌아간다.
+
+branch
+
+> 깃의 별개의 버젼을 관리하고 싶을 때 브랜치를 이용한다. 기존의 것은 master이다.
+
+- git branch // 깃 상의 브랜치를 보여준다.
+- git branch ~ // ~ 브랜치를 생성해준다.
+- git checkout ~ // ~ 브런치로 이동한다.
+- git merge ~ // ~ 브런치의 내용을master에 병합시킨다.
+- git branch -d ~ // ~ 브런치를 삭제한다.
+- git checkout -b ~ // ~ 브런치를 만들어서 전환까지 한다.
+
+* CONFLICT (Content): Merge conflict in ~
+  // 브런치에서 수정한 파일과 마스터에서 수정한 파일이 같은 파일인 경우 수정 내용이 달라 커밋 시에 오류가 발생한다.
