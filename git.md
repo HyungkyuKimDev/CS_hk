@@ -44,6 +44,7 @@ git commit
 
 > 스테이징 영역에 이동시킨 파일의 깃 메세지를 입력함
 > git commit -m "~" 을 쓰면 에디터를 사용하지 않고 커밋이 가능하다.
+> git commit -am "~" 을 쓰면 add 와 commit 을 동시에 할 수 있다.
 
 git log
 
@@ -97,5 +98,40 @@ branch
 - git branch -d ~ // ~ 브런치를 삭제한다.
 - git checkout -b ~ // ~ 브런치를 만들어서 전환까지 한다.
 
-* CONFLICT (Content): Merge conflict in ~
-  // 브런치에서 수정한 파일과 마스터에서 수정한 파일이 같은 파일인 경우 수정 내용이 달라 커밋 시에 오류가 발생한다.
+\*\* CONFLICT (Content): Merge conflict in ~
+// 브런치에서 수정한 파일과 마스터에서 수정한 파일이 같은 파일인 경우 수정 내용이 달라 커밋 시에 오류가 발생한다.
+
+> 이 경우 에디터를 통해 파일 편집에 들어가서. 겹친 부분이 나타나져있을 텐데. 둘 중에 하나를 삭제하면 된다.
+
+git tag ~
+
+> 깃 로그 커밋 ID에 별명을 주는 기능
+> git tag ~ // ~로 커밋 ID가 바뀐다.
+> 반대로 git show ~ // 로 하면 ~를 별명으로 가진 커밋을 보여준다.
+> git tag ~~ ID // ~~ 커밋 ID를 충분히 주면 그 커밋의 태그를 설정하는 것도 가능하다.
+> git tag -d ~~ // ~~ 태그 삭제
+
+alias
+
+> 명령에 별명을 붙여 간단하게 사용 가능
+
+- git config --global alias.~ ~~ // ~~를 ~라고 바꿔서 저장. ~~를 쓰면 ~로 사용 가능
+- git config -l // alias 명령어 확인 가능
+
+공유 포지터리 (共有リポジトリ)
+
+> 타인과 소스 코드를 공유하면서 공동 개발을 진행하기 위해 필요한 것을 말한다. 관례상 .git 을 붙여 제작해나간다.
+> 공유 리포지토리를 만들 때는 폴더를 만든 뒤, git init --bare 써야 한다.
+
+git remote
+
+> 다른 리포지토리를 쓰기 위해 사용.
+
+- git remote add origin ~/~~.git // 새 리포지토리를 생성한다. 주로 사용되는 이름은 origin / 그 뒤로 리포지토리의 위치를 지정한다.
+- git remote rm origin // 삭제하는 방법
+- git config -l // origin 위치를 확인할 수 있다.
+- git push origin master // 공유 리포지토리에 지금 있는 내용을 입력한다. oritin에 master의 내용을 입력
+- 팀원이 같은 서버에 접속한 경우, 공유 리포지토리의 내용을 자신의 폴더(myweb2)에 넣고 싶으면 git clone ~/ourweb.git myweb2 한다.
+- 파일을 수정한 뒤. 공유 리포지토리에 넣기 위해선 git push origin master 하고.
+- 이후 팀원이 수정한 내용을 알고 싶으면 git pull origin master 한다. // 수정한 내용이 병합됨
+- conflict가 발생하면 동일하게 수정해서 해결한 뒤. 다시 git push originm master 한다.
