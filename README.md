@@ -1,4 +1,4 @@
-# TIL
-Today I Learned
+# Computer Science
+COmputer Science I learned.
 
-I'm trying to memorize what I learned today. That mitght be helpful one day :D
+必要なプログラミングの知識を整理しました：D
