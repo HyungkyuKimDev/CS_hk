@@ -1,0 +1,31 @@
+＃参考のサイト：１。https://git-scm.com/ #(gitのサイトのドキュメント)　２。https://docs.github.com/ja　＃（Github　Docs）　
+
+.gitignore
+
+
+.gitignore とは
+＞
+ 　.gitignoreはGitで使えられる特徴なファイルでこのファイルに作成されたファイルは上から順番に処理されて、Gitのトラッキングの対象外になります。
+　　.gitignoreは’.'で始まり、隠しファイルとして存在します。
+
+
+.gitignore の使い方
+＞
+　　ファイル・ディレクトリ名を入力して使います。
+
+　　例）
+　　# temp.txt　ファイルを無視
+  temp.txt
+  
+  # temp　ディレクトリーを無視(/で始まらない場合)
+  temp / 
+
+  # temp ディレクトリーからの相対パスで指定されたディレクトリを無視（/で始まる場合）
+  / temo / 
+
+  # .txt 全部無視 (＊は全部を意味)
+  *.txt
+
+  # temp ディレクトリを無視しない　（！は不定の意味）
+  ! temp /
+
