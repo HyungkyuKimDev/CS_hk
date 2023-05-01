@@ -1,1 +1,7 @@
+# Files that ignored when github push
+
+# DS_Store file
 .DS_Store
+
+# txt file which have private information
+*.txt 
