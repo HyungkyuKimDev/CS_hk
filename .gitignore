@@ -5,3 +5,6 @@
 
 # txt file which have private information
 *.txt 
+
+# hidden file
+./vscode
