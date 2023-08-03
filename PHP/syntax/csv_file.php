@@ -79,5 +79,3 @@ fputcsv($handle, $row);
 fclose($handle);
 
 */
-
-?>

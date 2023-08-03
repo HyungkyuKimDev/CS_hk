@@ -26,7 +26,3 @@ include __DIR__."/PHP/IncludeRequire.php";
 서버를 작동할 경우, html 폴더에서 작동시켜 공개되어도 상관 없는 부분만 보여지도록 한다.
 공개 되면 안 되는 파일의 경우, include 나 require을 이용해서 사용하자.
  */
-
-?>
-
-

@@ -22,5 +22,3 @@ $answer = 'A';
 $explanation = 'Aはなんとかかんとかです。ちなみにexplanationとは解説という意味です。';
 
 */
-
-?>

@@ -82,5 +82,3 @@ foreach ($fruitsList as $fruits):
 endforeach;
 
 */
-
-?>

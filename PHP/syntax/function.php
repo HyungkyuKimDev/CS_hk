@@ -29,5 +29,3 @@ function calculateBmi($height, $weight) {
 echo calculateBmi(1.65, 58); // 「21.303948576676」を出力
 
 */
-
-?>
