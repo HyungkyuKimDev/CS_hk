@@ -250,11 +250,11 @@ class ClassName
 
 
 namespace Vendor\Package;
-​
+
 use Vendor\Package\FirstTrait;
 use Vendor\Package\SecondTrait;
 use Vendor\Package\ThirdTrait;
-​
+
 class ClassName
 {
     use FirstTrait;
@@ -266,9 +266,9 @@ class ClassName
 
 
 namespace Vendor\Package;
-​
+
 use Vendor\Package\FirstTrait;
-​
+
 class ClassName
 {
     use FirstTrait;
