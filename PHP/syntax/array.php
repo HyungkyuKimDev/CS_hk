@@ -18,6 +18,9 @@ $arr[] = '値2';
 $arr[] = '値3';
 $arr[] = '値4';
 
+array_push($a, 5); // 값 추가 
+unset($a[0]); // 값 제거
+
 echo $arr[0]; // 「値1」を出力
 echo $arr[3]; // 「値4」を出力
 
@@ -26,6 +29,14 @@ echo $arr[3]; // 「値4」を出力
 /*
 Associative Array 連想配列 연관 배열
 => 배열의 인덱스를 숫자가 아닌 문자로도 사용되는 배열
+
+$b = array('a' => 10);
+
+연관 배열 값 추가
+$b['b'] = 20;
+
+연관 배열 값 제거
+unset($b['a']);
 
 $key => $value 구조
 
@@ -80,5 +91,24 @@ endforeach 를 쓰는 경우
 foreach ($fruitsList as $fruits):
     echo '果物: '.$fruits."\n";
 endforeach;
+
+<?php
+$a = array(1,2,3,4,5);
+foreach($a as $item){
+    echo $item;
+    echo "<br />";
+}
+
+echo "<br />";
+$b = array('a'=>10, 'b'=>20, 'c'=> 'hi php');
+foreach($b as $key=>$value){
+    echo "$key => $value";
+    echo "<br />";
+}
+
+특이사항
+
+반복문은 보통 배열항목 in 배열 인 반면
+php에서는 배열 as 배열항목 이다.
 
 */
