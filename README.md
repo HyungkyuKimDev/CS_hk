@@ -1,4 +1,4 @@
-# キム・ヒョンギュの Programming
+# HyungKyu Kim Server-Side Developer
 
 Langugage & Framework
 
