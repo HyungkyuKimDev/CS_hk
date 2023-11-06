@@ -1,8 +1,8 @@
-git
+# git
 
-파일 저장의 흐름
+## 파일 저장의 흐름
 
-1.  작업 디렉터리
+1. 작업 디렉터리
 
     > 파일 작성 수정
 
@@ -13,8 +13,9 @@ git
 3.  리포지토리(로컬 / 원격)
     > 혼자 작성할 때는 로컬 리포지터리에 저장해 버젼을 저장하거나 하고. 팀 단위의 경우 원격을 이용한다.
 
-깃 기본 설정
-:
+
+## 깃 기본 설정
+
 유저 이름 / 유저 이메일 설정
 
 > git config --global user.name " ~ "  
@@ -61,13 +62,14 @@ git log
 git status
 
 > 깃에서 현재 상황(파일이 어느 영역에 있는지 등등)을 확인할 수 있다.
-> changes not staged for commit // 파일이 아직 스테이징 영역 또는 커밋에 오지 않았다.
-> modified: ~ // ~ 파일에 변경 사항이 발생하였다.(로컬 파일)
+> changes not staged for commit    
+> // 파일이 아직 스테이징 영역 또는 커밋에 오지 않았다.   
+> modified: ~ // ~ 파일에 변경 사항이 발생하였다.(로컬 파일)   
 > changes to be committed // 파일이 스테이징 영역에서 아직 커밋되지 않았다.
 
 git diff
 
-> 깃에서 파일 변경 사항 자세히 알고 싶을 때 사용
+> 깃에서 파일 변경 사항 자세히 알고 싶을 때 사용   
 > git diff --cached // 스테이징 영역에 있는 파일이 커밋될 시, 어느 영역이 어떻게 변경되는 지 알려줌
 
 git rm
@@ -76,12 +78,12 @@ git rm
 
 git commit --amend
 
-> 깃에서 변경 사항을 굳이 커밋 메세지에 남길 필요가 없을 경우 git add 한 뒤 git commit --amend 한다. 이후 커밋 메세지 변경 여부를 물어본다. :wq 입력하면 마무리
+> 깃에서 변경 사항을 굳이 커밋 메세지에 남길 필요가 없을 경우 git add 한 뒤         
+> git commit --amend 한다. 이후 커밋 메세지 변경 여부를 물어본다. > :wq 입력하면 마무리
 
 git reset
-
+ 
 > 깃을 이전 상태로 돌리기 위해서 사용
-
 - git reset --hard HEAD // 깃을 헤드로 돌린다, 헤드(가장 최신 버전)
 - git reset --hard HEAD^ // 깃 헤드 바로 직전 버전으로 돌린다.
 - git reset --hard ~(commit ID 최소 7자리) 입력 // 깃을 그 커밋 아이디 버전으로 돌아간다.
@@ -98,17 +100,17 @@ branch
 - git branch -d ~ // ~ 브런치를 삭제한다.
 - git checkout -b ~ // ~ 브런치를 만들어서 전환까지 한다.
 
-\*\* CONFLICT (Content): Merge conflict in ~
-// 브런치에서 수정한 파일과 마스터에서 수정한 파일이 같은 파일인 경우 수정 내용이 달라 커밋 시에 오류가 발생한다.
+CONFLICT (Content): Merge conflict in ~
+> 브런치에서 수정한 파일과 마스터에서 수정한 파일이 같은 파일인 경우 수정 내용이 달라 커밋 시에 오류가 발생한다.
 
 > 이 경우 에디터를 통해 파일 편집에 들어가서. 겹친 부분이 나타나져있을 텐데. 둘 중에 하나를 삭제하면 된다.
 
 git tag ~
 
-> 깃 로그 커밋 ID에 별명을 주는 기능
-> git tag ~ // ~로 커밋 ID가 바뀐다.
-> 반대로 git show ~ // 로 하면 ~를 별명으로 가진 커밋을 보여준다.
-> git tag ~~ ID // ~~ 커밋 ID를 충분히 주면 그 커밋의 태그를 설정하는 것도 가능하다.
+> 깃 로그 커밋 ID에 별명을 주는 기능   
+> git tag ~ // ~로 커밋 ID가 바뀐다.   
+> 반대로 git show ~ // 로 하면 ~를 별명으로 가진 커밋을 보여준다.   
+> git tag ~~ ID // ~~ 커밋 ID를 충분히 주면 그 커밋의 태그를 설정하는 것도 가능하다.   
 > git tag -d ~~ // ~~ 태그 삭제
 
 alias
@@ -135,3 +137,113 @@ git remote
 - 파일을 수정한 뒤. 공유 리포지토리에 넣기 위해선 git push origin master 하고.
 - 이후 팀원이 수정한 내용을 알고 싶으면 git pull origin master 한다. // 수정한 내용이 병합됨
 - conflict가 발생하면 동일하게 수정해서 해결한 뒤. 다시 git push originm master 한다.
+
+git 상태 확인
+
+> git status   
+git status -s :  
+: OO filename   
+: First O - Staging 상태를 보여줌  
+: Second O - Working directory 상태를 보여줌  
+: M - Modifyed  
+: A - Added  
+: ? - Unstaged  
+Staging Area file을 Unstage로 변경하기  
+git reset HEAD filename  
+git checkout — filename  
+Tag : 특정 commit에 대해 Tag를 지정 (Version 관리로 주로 사용)  
+
+
+조회
+
+> git branch -v   
+git branch —merged  
+git branch —no-merged  
+만들기 : git branch issues  
+변경하기 : git checkout issue  
+만들고 변경하기 : git checkout -b issue  
+확인하기 : git branch  
+삭제하기 :
+Merged branch : git branch -d issue  
+No-merged brnach : git branch -D issue  
+파일만들기 : touch test.txt  
+파일추적하기 : git add test.txt  
+파일추적제외하기 : .gitignore 파일에 해당 파일명이나 filter를 적는다.  
+: *.[oa] - 확장자가 .o 이거나 .s는 무시한다.  
+
+Commit
+
+> 파일변경완료 : git commit -m “add test.txt”  
+Unstaged file를 바로 commit하기 : git commit -a -m    “Version update”  
+diff결과를 commit message로 사용하기 git commit -v  
+이전 commit 지우고 새로 등록하기  
+git commit -m ‘initial commit’  
+git add forgotten_file  
+git commit —amend  
+Commit hash 확인하기 : git log —pretty=oneline  
+
+조회하기  
+
+> git log  
+git log —pretty=format:”%h %s” —graph
+
+원격저장소
+
+> 원격저장소 확인하기  
+git remote -v  
+git remote show origin  
+원격저장소 내려받기 : git clone 원격저장소_URL  
+원격저장소 추가하기 : git add remote origin 저장소이름         
+원격저장소_URL  
+
+Fetch 
+
+> git fetch origin   
+원격 저장소와 로컬 저장소를 비교해서, 푸쉬 전 문제 발생 예방
+
+Merge
+
+> git checkout master  
+git diff orign master  
+git merge issue  
+git branch -d issue  
+
+원복하기
+
+> 파일 원복 : git checkout — filename  
+Commit 원복    
+git fetch origin  
+git reset —hard origin/master  
+Pull(Fetch + Merge) : git pull
+
+Push : git push origin issue
+
+> master로 merge 하고 Pull request 보내기 : 비추천 방식
+
+> master branch로 이동 : git checkout master  
+Merge : git merge issue  
+Push : git push origin/master master  
+issue로 pull request 보내고 master로 Pull 하기 : 추천 방식
+
+> push : git push origin issue  
+git request-pull origin issue  
+git checkout master  
+git fetch  
+git merge  
+
+Pull Request 보내기 
+
+>  git request-pull origin/master issue
+
+Push 
+> 이전에 꼭 확인하기  
+diff  
+diff —check : 공백으로 인한 변경사항 방지를 위해  
+commit  
+fetch  
+merge  
+push
+
+### Reference
+1. [git](https://git-scm.com/book/ko/v2)    
+2. [GIT COMMAND 사용법 정리](https://midnightcow.tistory.com/entry/Git-Command-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%A0%95%EB%A6%AC)
