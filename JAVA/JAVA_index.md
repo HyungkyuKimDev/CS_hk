@@ -296,5 +296,23 @@ public class Main {
 }
 ```
 
+### 7. Method
+
+- 메소드 제작 방법 (int num은 파라미터 역할)
+```java
+public class Main {
+    public static void sayHelloWorld(int num){
+            for(int i = 0; i < num; i++)
+            {
+                System.out.println("Hello Guys");
+            }
+        }
+    
+    public static void main(String[] args){
+        sayHelloWorld(5);
+    }
+}
+```
+
 ### Reference
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
