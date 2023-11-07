@@ -1,0 +1,37 @@
+# git reset & revert
+
+git에서 잘못된 커밋을 한 경우, 수정하기 위해 사용하는 command.
+
+
+## reset
+- 사용시, 지정 커밋들이 삭제되어. 그 이전 커밋 상태로 돌아간다.
+
+- command
+    > git reset --soft [commit ID]   
+    // 해당 커밋들이 staging area로 이동(commit 전 상태)  
+
+    > git reset --mixed [commit ID]   
+    // (default)   commit된 파일들을 working directory로 이동(add 전 상태)      
+
+    > git reset --hard [commit ID]     
+    // commit된 파일들 중 tracked 파일들을 working directory에서 삭제  
+
+    > git reset HEAD~n // n번째 커밋까지 reset   
+
+    > git reset HEAD^  // 가장 최근 커밋 reset
+
+- 주의사항   
+ : reset의 경우, 기존 커밋 이력이 삭제되므로 origin에서 conflict가 난다. 따라서, 팀 플레이에서는 사용하지 않는다.
+
+## revert
+- 사용시, 지정 커밋은 이력이 남은 상태로. 지정 커밋의 삭제 커밋을 남기고 그 이전 커밋 상태로 돌아간다.
+
+- command
+    > git revert [commit ID]   
+    // 해당 커밋 전으로 돌아간다.
+
+
+### Reference
+
+[pearl.log : [Git] reset과 revert 알고 사용하기](https://velog.io/@njs04210/Git-reset%EA%B3%BC-revert-%EC%95%8C%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)  
+[기억보단 기록을 : git reset, revert로 이전 커밋으로 돌리기](https://kyounghwan01.github.io/blog/etc/git/git-reset-revert/#reset)
