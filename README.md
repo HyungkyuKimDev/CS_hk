@@ -8,6 +8,8 @@ Langugage & Framework
 
 - [PHP](PHP/PHP_index.md)
 
+- [Java](JAVA/JAVA_index.md)
+
 <br>
 
 Computer Science
