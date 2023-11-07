@@ -8,9 +8,31 @@ Java는 제임스 고슬링과 연구원들이 개발한 객체 지향적 프로
 Write Once, Run Anywhere
 직역을 하면, '한 번 작성하면 어디에서나 실행된다'는 의미로, 자바로 개발된 프로그램은 자바 실행 환경 JRE가 설치된 모든 환경에서 실행이 가능하다는 것을 의미한다.
 
+### javac
+Java Compiler
+
 ### JVM (Java Virtual Machine)
+Java Application을 Class Loader를 통해 읽어 Java API와 함께 실행한다.   
+Java 와 OS 사이에서 OS에 관계없이 독립적으로 작동하도록 한다.
+
+### JRE (Java Runtime Environment)
+JVM + Libraries + Other Components  
+JVM과 JAVA 실행시 필요한 라이브러리 및 기타 Components를 묶어 배포하는 패키지   
+Java 실행을 위해 필요
 
 ### JDK (Java Development Kit)
+JDK = JRE + Compilers + Debuggers  
+Java 프로그램을 compile 하고 Run 하는데 필요
+
+### Package
+
+클래스들을 패키지 단위로 묶어서, 정리한다.
+> com.[pakage].[class Name]
+
+클래스 사용
+> package com.[package];
+
+
 
 ## Syntax
 
@@ -313,6 +335,7 @@ public class Main {
     }
 }
 ```
+
 
 ### Reference
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
