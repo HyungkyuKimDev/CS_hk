@@ -318,6 +318,37 @@ public class Main {
 }
 ```
 
+```Java
+public class Square {
+
+    private int side;
+
+    public Square(int side) {
+        // TODO: Initialize side with the passed value
+        this.side = side;
+    }
+
+    public int calculateArea() {
+        // TODO: Calculate and return the area of the square
+        if(this.side <= 0){
+            return -1;
+        }else{
+            return this.side * this.side;
+        }
+    }
+
+    public int calculatePerimeter() {
+        // TODO: Calculate and return the perimeter of the square
+        if(this.side <= 0){
+            return -1;
+        }else{
+            return this.side * 4;
+        }
+    }
+
+}
+```
+
 ### 7. Method
 
 - 메소드 제작 방법 (int num은 파라미터 역할)
