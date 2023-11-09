@@ -116,6 +116,22 @@ public class Main {
 }
 ```
 
+```java
+public class MyChar {
+ 
+    public boolean isVowel(char ch) {
+ 
+        switch (ch) {
+            
+            case 'a', 'e', 'i', 'o', 'u' : 
+            case 'A', 'E', 'I', 'O', 'U' : return true;
+            
+            default: return false;
+        }
+    }
+}
+```
+
 - 삼항 연산자  
     - 변수명 = (논리 조건) ? true일 때 실행되는 기능 : false일 때 실행되는 기능   
 
