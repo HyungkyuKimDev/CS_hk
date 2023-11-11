@@ -494,5 +494,145 @@ public class StringMagic {
 }
 ```
 
+### 9. list
+
+저장된 요소들의 순서가 있고, 데이터 간 중복이 가능하고, index 번호에 의해 정렬된다.
+
+- 특징
+    - Collection 인터페이스 중 하나
+    - 배열로 이루어진 ArrayList 와 LinkedList 두 종류
+    - 크기 조절이 가능
+    - 초기 크기 지정하지 않아도 됨
+    - 삭제는 공간을 지우는 것
+
+- 선언 방식   
+    ```java List<자료형> 리스트 명 = new ArrayList(or LinkedList)<자료형(생략가능)>();```
+    
+    ```java
+    import java.util.ArrayList;  // ArratList 선언 시
+
+    import java.util.LinkedList; // LinkedList 선언 시
+    import java.util.List;
+    ```
+
+    <br>은 제네릭이다.
+
+- list 사용
+    - List.add(value); : 값 삽입
+
+    - List.add(index, value); : index 중간에 넣을 인덱스(배열 인덱스), value: 중간에 넣을 값. 중간에 값을 넣을 경우 중간에 넣은 값 이후에 값들은 한 칸씩 밀림
+
+    - List.set(index, value); : index는 치환할 값 자리 인덱스, value는 치환할 자리 값
+
+    - List.remove(index); : 인덱스 위치에 있는 값 삭제
+
+    - List.clear(); 모든 요소 삭제
+
+    - List.get(index) : 인덱스 위치에 있는 값 출력
+
+    - List.size() : 리스트 크기 출력
+<br></br>
+-   Ex) array list
+    ```java
+    import java.util.ArrayList;
+    import java.util.List;
+    import java.util.Random;
+
+    public class ArrayListTest01 {
+
+	public static void main(String[] args) {
+
+		// ArrayList 생성
+		// 컬렉션 계열에서 데이터 타입을 지정하기 위해서 제네릭 사용
+		// <데이터 타입> 을 쓴다.
+		// 데이터 타입은 일반 변수 타입이 아닌 Wrapper class 타입으로 지정
+		// ArrayList와 배열에 차이는 ArrayList는 크기를 먼저 지정하지 않아도 된다. 배열은 크기를 먼저 지정하고 사용해야 한다.
+		List<Integer> list = new ArrayList<>();
+
+		// 데이터 타입 - random 클래스
+		Random ran = new Random();
+		for (int i = 0; i < 5; i++) {
+			list.add(ran.nextInt(30) + 1); // random에 +1을 안 해 주면 0 ~ 29까지만 사용된다.
+		}
+		// 출력 - 출력은 배열 출력과 거의 비슷하다.
+
+		for (int i = 0; i < 5; i++) {
+			System.out.print(list.get(i) + "\t");
+		}
+		System.out.println();
+
+		// 중간 삽입 - index 3 (4 번째) 중간 삽입
+		list.add(3, 35);
+		for (int i = 0; i < list.size(); i++) {
+			System.out.print(list.get(i) + "\t");
+		}
+		System.out.println();
+
+		// 치환 - 첫 번째 값을 치환
+		list.set(0, 40);
+
+		// 삭제 전 list 크기
+		System.out.println("삭제 전 lsit 크기: " + list.size());
+
+		// 삭제 - 마지막 인덱스 삭제
+		list.remove(4);
+
+		// 삭제 후 list 크기
+		System.out.println("삭제 후 list 크기: " + list.size());
+
+		for (int i = 0; i < 5; i++) {
+			System.out.print(list.get(i) + "\t");
+		}
+		System.out.println();
+		System.out.print("iterator 사용: "+"\t");
+		for (int i : list) {
+			System.out.print(i + "\t");
+		}
+	}
+    }
+    ```
+<br></br>
+- Ex) linked list
+    ```java
+    import java.util.LinkedList;
+    import java.util.List;
+
+    public class LinkedListTest01 {
+
+	public static void main(String[] args) {
+
+		List<Integer> list = new LinkedList<>(); // LinkedList 생성
+
+		list.add(1); // 값 추가
+		list.add(2);
+		list.add(3);
+		list.add(4);
+
+		System.out.print("추가된 값: ");
+		for (int l : list) { // iterator를 이용해 리스트에 값 출력
+			System.out.print(l + "\t");
+		}
+		System.out.println();
+
+		list.set(2, 5); // 리스트 수정
+
+		System.out.print("수정된 값: ");
+		for (int l : list) { // iterator를 이용해 리스트에 값 출력
+			System.out.print(l + "\t");
+		}
+		System.out.println();
+
+		list.remove(1); // 리스트 삭제
+
+		System.out.print("삭제된 값: ");
+		for (int i = 0; i < list.size(); i++) { // 일반 for를 이용해서 반복
+			System.out.print(list.get(i) + "\t"); // .get() 메서드를 이용해 리스트에 값 출력
+		}
+		System.out.println();
+	}
+    }
+    ```
+
 ### Reference
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
+[sunnamgung8.log : [자바]List(컬렉션)](https://velog.io/@sunnamgung8/%EC%9E%90%EB%B0%94List%EC%BB%AC%EB%A0%89%EC%85%98)
