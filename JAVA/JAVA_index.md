@@ -437,5 +437,62 @@ public class Main {
         - nextInt() , next()
     2. nextLine() : 한 줄씩 처리
 
+### 8. String Method
+
+- isEmpty
+    - 문자열이 비었는지 확인
+    - str.isEmpty()
+
+- split
+    - 문자열을 배열로 나눠준다.
+    - str.split(" "); // 빈칸 단위로 나누는 경우
+
+- length
+    - 문자열 길이를 알려준다.
+    - str.length();      
+
+- Character.isDigit
+    - 해당 값이 숫자 인지 아닌지 판명
+    - Character.isDigit()
+
+- Characher.getNumericValue
+    - 문자형의 숫자를 숫자로 받아온다.
+    - Character.getNumericValue()
+
+```java
+public class StringMagic {
+
+    public String findLongestWord(String sentence) {
+ 
+        // Edge Case: If the sentence is empty, return an empty string
+        if (sentence.isEmpty()) {
+            return "";
+        }
+ 
+        // Split the sentence into words using space as the separator
+        String[] words = sentence.split(" ");
+ 
+        // Initialize variables to keep track of the longest word and its length
+        String longestWord = "";
+        int maxLength = 0;
+ 
+        // Iterate over each word in the words array
+        for (String word : words) {
+ 
+            // If the length of the current word is more than maxLength, update longestWord and maxLength
+            if (word.length() > maxLength) {
+                longestWord = word;
+                maxLength = word.length();
+            }
+        }
+ 
+        // Return the longest word found in the sentence
+       
+ 
+        return longestWord;
+        }
+}
+```
+
 ### Reference
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
