@@ -364,7 +364,7 @@ public class Square {
 
 }
 ```
-
+<br></br>
 ### 7. Method
 
 - 메소드 제작 방법 (int num은 파라미터 역할)
@@ -382,7 +382,7 @@ public class Main {
     }
 }
 ```
-
+<br></br>
 ### 8. Scanner 
 - 사용 입력 받는 방법 
 
@@ -493,6 +493,145 @@ public class StringMagic {
         }
 }
 ```
+<br></br>
+
+### 9. wrapper class
+
+- 기본 타입의 데이터를 객체로 표현하기 위해 사용하는 class
+- wrapper class로 감싼 기본 타입 값은 외부에서 변경할 수 없으며, 변경을 위해선 새로운 wrapper object를 만들어야 한다.
+- java.lang package에 포함되어 있기 때문에, 사용에 있어 package를 불러올 필요 없다.
+
+- wrapper class 이용, 데이터를 parameter로 받아 해당 값을 가지는 객체 생성
+
+```java
+Integer num1 = new Integer(5); // 기본형 타입 정수를 래퍼 클래스로 감싸 객체화
+Integer num1 = 5; // 이런식으로도 표현 가능
+
+Double num2 = new Double(1.11); // 기본형 타입 실수를 래퍼 클래스로 감싸 객체화
+Double num2 = 1.11;
+```
+
+- 기본 타입 
+    - byte short int long float double char boolean
+
+- wrapper class
+    - Byte Short Integer Long Float Double Character Boolean
+
+- 상호 변환
+    - Boxing : 기본 타입의 데이터 → 래퍼 클래스의 인스턴스로 변환
+    - UnBoxing : 래퍼 클래스의 인스턴스에 저장된 값 → 기본 타입의 데이터로 변환
+
+```java
+// Boxing
+Integer num = new Integer(20); // Integer 래퍼 클래스 num 에 21 의 값을 저장
+
+// Unboxing (intValue)
+int n = num.intValue(); // 래퍼 클래스 num 의 값을 꺼내 가져온다.
+
+// 재 포장(박싱)
+n = n + 100; // 120
+num = new Integer(n);
+```
+
+- unboxing method
+    - booleanValue() byteValue() doubleValue() floatValue() intValue() longValue() shortValue()
+
+- AutoBoxing & AutoUnBoxing
+    - JDK 1.5 부터는 박싱과 언박싱이 필요한 상황에 자바 컴파일러가 자동으로 처리해주기 시작했다.이러한 자동화된 박싱과 언박싱이 오토박싱 (AutoBoxing) 과  오토언박싱 (AutoUnBoxing) 
+    - 기본타입 값을 직접 박싱, 언박싱하지 않아도 래퍼 클래스 변수에 대입만 하면 자동으로 박싱과 언박싱 처리
+
+```java
+/* 기존 박싱 & 언박싱 */
+Integer num = new Integer(17); // 박싱
+int n = num.intValue();        // 언박싱
+
+/* 오토 박싱 & 언박싱 */
+Integer num = 17; // new Integer() 생략
+int n = num; // intValue() 생략
+```
+
+- 오토 박싱 & 언박싱 기능을 이용해 다음과 같이 래퍼 객체를 직접 연산이 가능
+- 원래는 래퍼 클래스는 직접 연산이 불가능 하지만 컴파일러가 스스로 판단해 자동으로 언박싱하여 연산 하기 때문에 다음 구문이 허용
+
+```java
+Integer num1 = new Integer(7); // 박싱
+Integer num2 = new Integer(3); // 박싱
+
+int int1 = num1.intValue();    // 언박싱
+int int2 = num2.intValue();    // 언박싱
+
+// 박싱된 객체를 오토 언박싱하여 연산하고 다시 박싱하여 저장
+Integer result1 = num1 + num2; // 10 
+Integer result2 = int1 - int2; // 4
+int result3 = num1 * int2;     // 21
+```
+
+- 오토 언박싱을 통해 객체 값을 더하고 빼고는 문제는 없지만, 객체 값을 비교를 할때 문제 발생 가능
+    - 인스턴스에 저장된 값에 대한 동등 여부 판단은 동등 연산자 == 으로는 값을 비교하는게 아닌 객체의 주소값을 비교해서 의도적이지 않은 작동 발생 가능
+
+```java
+Integer num1 = new Integer(10);
+Integer num2 = new Integer(20);
+Integer num3 = new Integer(10);
+
+System.out.println(num1 == num3);      // false
+System.out.println(num1.equals(num3)); // true
+
+// 동등 비교 외의 연산은 문제 없다.
+System.out.println(num1 < num2);       // true
+System.out.println(num1 + num2);       // 30
+```
+
+- 대신 래퍼 클래스와 기본 자료형과의 비교는 자동으로 오토박싱과 언박싱을 해주기 때문에 == 연산과 equals 연산 모두 가능하다.
+
+```java
+Integer num = new Integer(10); // 래퍼 클래스1
+Integer num2 = new Integer(10); // 래퍼 클래스2
+int i = 10; // 기본타입
+
+// 래퍼클래스 == 기본타입
+System.out.println(num == i); // true
+
+// 래퍼클래스.equals(기본타입)
+System.out.println(num.equals(i)); // true
+
+// 래퍼클래스 == 래퍼클래스
+System.out.println(num == num2); // false (invalid)
+
+// 래퍼클래스.equals(래퍼클래스)
+System.out.println(num.equals(num2)); // true
+```
+
+- 객체를 포장하는 기능 외에도, 래퍼 클래스는 자체 지원하는 parse타입() 메소드를 이용하여 데이터 타입을 형 변환 할때도 유용히 쓰임
+
+```java
+String str = "10";
+String str2 = "10.5";
+String str3 = "true";
+
+byte b = Byte.parseByte(str);
+int i = Integer.parseInt(str);
+short s = Short.parseShort(str);
+long l = Long.parseLong(str);
+float f = Float.parseFloat(str2);
+double d = Double.parseDouble(str2);
+boolean bool = Boolean.parseBoolean(str3);
+
+System.out.println("문자열 byte값 변환 : "+b);
+System.out.println("문자열 int값 변환 : "+i);
+System.out.println("문자열 short값 변환 : "+s);
+System.out.println("문자열 long값 변환 : "+l);
+System.out.println("문자열 float값 변환 : "+f);
+System.out.println("문자열 double값 변환 : "+d);
+System.out.println("문자열 boolean값 변환 : "+bool);
+```
+
+- 주의 사항
+    - 기능적 편의성을 위하여 오토 박싱 / 언박싱을 제공하지만, 다른 타입간의 형 변환은 어플리케이션의 성능에 영향 존재. 비록 사소한 차이 일지라도 어플리케이션의 성능 측면에서 봤을때 반드시 필요한 상황이 아니라면 지양 해야함
+
+#### Reference
+[Inpa Dev 👨‍💻:티스토리](https://inpa.tistory.com/entry/JAVA-☕-wrapper-class-Boxing-UnBoxing)
+
 
 ### 10. list
 
