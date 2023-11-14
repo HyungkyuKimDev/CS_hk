@@ -494,7 +494,7 @@ public class StringMagic {
 }
 ```
 
-### 9. list
+### 10. list
 
 저장된 요소들의 순서가 있고, 데이터 간 중복이 가능하고, index 번호에 의해 정렬된다.
 
