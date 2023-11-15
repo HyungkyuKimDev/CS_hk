@@ -33,8 +33,19 @@ Java 프로그램을 compile 하고 Run 하는데 필요
 > package com.[package];
 
 
-
 ## Syntax
+
+[1. 자료형](#1-자료형)   
+[2. 배열 (Array)](#2-배열-array)
+[3. 조건문](#3-조건문)
+[4. 반복문](#4-반복문)
+[5. 클래스, 인스턴스, 메소드](#5-클래스-인스턴스-메소드)
+[6. 생성자](#6-생성자)
+[7. Method](#7-method)
+[8. Scanner ](#8-scanner)
+[9. wrapper class](#9-wrapper-class)
+[10. list](#10-list)
+[11. OOP](#11-oop)
 
 ### 1. 자료형   
 - Java의 자료형은 크게 Primitive type(기본자료형)과 Reference type(참조자료형)으로 구분된다.
@@ -797,6 +808,8 @@ System.out.println("문자열 boolean값 변환 : "+bool);
 	}
     }
     ```
+
+### 11. OOP
 
 ### Reference
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)
