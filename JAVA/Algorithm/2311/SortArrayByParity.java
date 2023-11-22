@@ -9,6 +9,25 @@
 // Explanation: The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
 
 
-public class SortArrayByParity {
-    public static void main (String[] args){
-    }}
+class Solution {
+    public int[] sortArrayByParity(int[] nums) {
+        int[] james = new int[nums.length];
+        int temp = 0;
+        for(int i = 0; i < nums.length; i++){
+            if (nums[i] % 2 == 0){
+                james[temp] = nums[i];
+                if(temp == nums.length - 1){
+                    break;
+                }
+                temp++;
+            }
+        }
+        for(int i = 0; i < nums.length; i++){
+            if (nums[i] % 2 != 0){
+                james[temp] = nums[i];
+                temp++;
+            }
+        }
+        return james;
+    }
+}
