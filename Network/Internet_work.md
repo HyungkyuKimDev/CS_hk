@@ -6,6 +6,8 @@ How does the Internet work?
 >
 > > 사용자가 이용하는 컴퓨터 : 클라이언트
 
+> Reference : [https://cs.fyi/guide/how-does-internet-work](How does the Internet Work?)
+
 What is HTTP?
 
 Browsers and How they work?
