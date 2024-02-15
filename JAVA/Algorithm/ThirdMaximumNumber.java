@@ -1,3 +1,6 @@
+// Leet Code : Height Checker
+// https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3228/
+
 class Solution {
     public int thirdMax(int[] nums) {
         // 배열 원소의 수가 1인 경우와 2인 경우 조건식
