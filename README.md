@@ -33,5 +33,5 @@ Computer Science
 Backend Road map From roadmap.sh "https://roadmap.sh/backend"
 
 <p align="center">
-  <img src="page_1_backend.jpg">
+  <img src="backendRoadmap.jpg">
 </p>
