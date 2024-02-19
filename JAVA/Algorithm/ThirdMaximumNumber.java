@@ -1,5 +1,5 @@
-// Leet Code : Height Checker
-// https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3228/
+// Leet Code : Third Maximum Number
+// https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3231/
 
 class Solution {
     public int thirdMax(int[] nums) {
