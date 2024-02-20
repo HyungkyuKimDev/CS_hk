@@ -73,6 +73,21 @@ Java 프로그램을 compile 하고 Run 하는데 필요
   - Strings, Arrays, Classes, Interface 등이 존재한다.
   - null이 될 수 있다.
 
+- Type Casting
+  - Primitive type value를 다른 type으로 변경함을 말한다.
+  - Widening casting(Automatically) : 자동으로 변경 가능
+    - byte -> short -> char -> int -> long -> float -> double
+    ```java
+    int myInt = 9;
+    double myDouble = myInt; // Automatic casting: int to double
+    ```
+  - Narrowing Casting(Manually) : 앞에 변경할 타입을 괄호쳐서 처리해줘야 함 
+    - double -> float -> long -> int -> char -> short -> byte
+    ```java
+    double myDouble = 9.78d;
+    int myInt = (int) myDouble; // Manual casting: double to int
+    ```
+
 ### 2. 배열 (Array)
 
 - 배열 변수명 선언 (아래의 코드에선 arr이 배열의 변수 명)
