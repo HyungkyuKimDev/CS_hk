@@ -88,6 +88,29 @@ Java 프로그램을 compile 하고 Run 하는데 필요
     int myInt = (int) myDouble; // Manual casting: double to int
     ```
 
+  - Strings
+    - String Methods
+      - toUpperCase() => make all letters in a sentence as Capital letter 
+      - toLowerCase() => make all letters in a sentence as lowercase
+
+      ```java
+      System.out.println(txt.toUpperCase());   // Outputs "HELLO WORLD"
+      System.out.println(txt.toLowerCase());   // Outputs "hello world"
+      ```
+
+      - indexOf() => find an letter in a sentence and return that index of the senetence
+      ```java
+      String txt = "Please locate where 'locate' occurs!";
+      System.out.println(txt.indexOf("locate")); // Outputs 7
+      ```
+
+      - concat() => concatenate two strings
+      ```java
+      String firstName = "John ";
+      String lastName = "Doe";
+      System.out.println(firstName.concat(lastName));
+      ```
+
 ### 2. 배열 (Array)
 
 - 배열 변수명 선언 (아래의 코드에선 arr이 배열의 변수 명)
