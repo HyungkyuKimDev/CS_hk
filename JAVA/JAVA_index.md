@@ -131,6 +131,29 @@ Java 프로그램을 compile 하고 Run 하는데 필요
     ```java
     int randomNum = (int)(Math.random() * 101);  // 0 to 100
     ```
+  
+  - Shift Operator
+    - << : Signed Left Shift
+      - The left shift operator moves all bits by a given number of bits to the left.
+      ```java
+      int number = 2; // 0010
+      int Ans = number << 2; // 1000 => 8
+      ```
+    - >> : Signed Right Shift
+      - The right shift operator moves all bits by a given number of bits to the right.
+      ```java
+      int number = 8; // 1000
+      int Ans = number >> 2; // 0010 => 2
+      ```
+    - >>> : Unsigned Right Shift
+      - the vacant leftmost position is filled with 0 instead of the sign bit.
+      ```java
+      byte num1 = 8; // 0000 1000
+      byte num2 = -8; // 1111 1000
+      
+      System.out.println(num1 >>> 2); // 0000 0010   
+      System.out.println(num2 >>> 2); // 0011 1110
+      ```
 
 ### 2. 배열 (Array)
 
