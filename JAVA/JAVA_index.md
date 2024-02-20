@@ -67,11 +67,11 @@ Java 프로그램을 compile 하고 Run 하는데 필요
     > System.out.println(Short.MAX_VALUE);  
     >  System.out.println(Short.MIN_VALUE);
 
-- reference type의 종류:
+- reference type(=Non-primitive)의 종류:
   - 참조 자료형은 위의 기본 자료형을 제외한 모든 자료형을 말한다.
   - 쉽게 말해 자바의 인스턴스를 가리킬 수 있는 자료형이다.
-  - 클래스, 배열, 열거, 인터페이스 등이 존재한다.
-  - 가장 친근한 String 또한 참조 자료형에 속한다.(클래스)
+  - Strings, Arrays, Classes, Interface 등이 존재한다.
+  - null이 될 수 있다.
 
 ### 2. 배열 (Array)
 
