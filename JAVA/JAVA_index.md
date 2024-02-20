@@ -110,6 +110,27 @@ Java 프로그램을 compile 하고 Run 하는데 필요
       String lastName = "Doe";
       System.out.println(firstName.concat(lastName));
       ```
+  - Math Class
+    - Math.max(x,y) => find the highest value of x and y
+    ```java
+    Math.max(5, 10);
+    ```
+    - Math.min(x,y) => find the lowest value of x and y
+    ```java
+    Math.min(5, 10);
+    ```
+    - Math.sqrt(x) => return the square root of x
+    ```java
+    Math.sqrt(64);
+    ```
+    - Math.abs(x) => method returns the absolute (positive) value of x
+    ```java
+    Math.abs(-4.7);
+    ```
+    - Math.random() => returns a random number between 0.0 (inclusive), and 1.0
+    ```java
+    int randomNum = (int)(Math.random() * 101);  // 0 to 100
+    ```
 
 ### 2. 배열 (Array)
 
