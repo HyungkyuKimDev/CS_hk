@@ -1,170 +1,170 @@
-# Visual Studio Code
+# 비주얼 스튜디오 코드
 
-## Shortcuts for Mac
+## 맥용 단축키
 
-### Basic Expression Description
-|Name | Description |
-|:--- |:---|   
-|⇧| Shift |   
-|⌘| Command |   
-|⌥| Option |   
-
-### General
+### 기본 표현 설명
 |이름 | 설명 |
 |:--- |:---|   
-|⇧⌘P| Show Command Palette |   
-|⌘P| Quick Open, Go to File |   
-|⇧⌘N| New window/instance |  
-|⌘W| Close window/instance |   
-|⌘| User Settings |   
-|⌘K ⌘S| Keyboard Shortcuts |   
+|⇧| 쉬프트 |   
+|⌘| 커맨드 |   
+|⌥| 옵션 |   
 
-### Basic Edit
+### 일반
 |이름 | 설명 |
 |:--- |:---|   
-|⌘X |Cut line (empty selection)|
-|⌘C |Copy line (empty selection)|
-|⌥↓ / ⌥↑ |Move line down/up|
-|⇧⌥↓ / ⇧⌥↑ |Copy line down/up|
-|⇧⌘K |Delete line|
-|⌘Enter / ⇧⌘Enter |Insert line below/above|
-|⇧⌘\ |Jump to matching bracket|
-|⌘] / ⌘[ |Indent/outdent line|
-|Home / End |Go to beginning/end of line|
-|⌘↑ / ⌘↓ |Go to beginning/end of file|
-|⌃PgUp / ⌃PgDn |Scroll line up/down|
-|⌘PgUp /⌘PgDn |Scroll page up/down|
-|⌥⌘[ / ⌥⌘] |Fold/unfold region|
-|⌘K ⌘[ / ⌘K ⌘] |Fold/unfold all subregions|
-|⌘K ⌘0 / ⌘K ⌘J |Fold/unfold all regions|
-|⌘K ⌘C |Add line comment|
-|⌘K ⌘U |Remove line comment|
-|⌘/ |Toggle line comment|
-|⇧⌥A |Toggle block comment|
+|⇧⌘P| 명령 팔레트 표시 |   
+|⌘P| 빠른 열기, 파일로 이동 |   
+|⇧⌘N| 새 창/인스턴스 |  
+|⌘W| 창/인스턴스 닫기 |   
+|⌘| 사용자 설정 |   
+|⌘K ⌘S| 키보드 단축키 |   
 
-### Multi-cursor and selection
+### 기본 편집
+|이름 | 설명 |
+|:--- |:---|   
+|⌘X |라인 잘라내기 (빈 선택)|
+|⌘C |라인 복사하기 (빈 선택)|
+|⌥↓ / ⌥↑ |라인 아래로/위로 이동|
+|⇧⌥↓ / ⇧⌥↑ |라인 복사하기 아래로/위로|
+|⇧⌘K |라인 삭제하기|
+|⌘Enter / ⇧⌘Enter |아래/위에 라인 삽입|
+|⇧⌘\ |매칭 괄호로 이동|
+|⌘] / ⌘[ |들여쓰기/내어쓰기 라인|
+|Home / End |라인 시작/끝으로 이동|
+|⌘↑ / ⌘↓ |파일 시작/끝으로 이동|
+|⌃PgUp / ⌃PgDn |라인 위/아래로 스크롤|
+|⌘PgUp /⌘PgDn |페이지 위/아래로 스크롤|
+|⌥⌘[ / ⌥⌘] |영역 접기/펼치기|
+|⌘K ⌘[ / ⌘K ⌘] |모든 하위 영역 접기/펼치기|
+|⌘K ⌘0 / ⌘K ⌘J |모든 영역 접기/펼치기|
+|⌘K ⌘C |라인 주석 추가|
+|⌘K ⌘U |라인 주석 제거|
+|⌘/ |라인 주석 토글|
+|⇧⌥A |블록 주석 토글|
+
+### 다중 커서 및 선택
 |이름 | 설명 |
 |:--- |:---|
-|⌥ + |click Insert cursor|
-|⌥⌘↑ |Insert cursor above|
-|⌥⌘↓ |Insert cursor below|
-|⌘U |Undo last cursor operation|
-|⇧⌥I |Insert cursor at end of each line selected|
-|⌘L |Select current line|
-|⇧⌘L|Select all occurrences of current selection|
-|⌘F2 |Select all occurrences of current word|
-|⌃⇧⌘→ / ← |Expand / shrink selection|
-|⇧⌥ + drag mouse |Column (box) selection|
-|⇧⌥⌘↑ / ↓ |Column (box) selection up/down|
-|⇧⌥⌘← / → |Column (box) selection left/right|
-|⇧⌥⌘PgUp |Column (box) selection page up|
-|⇧⌥⌘PgDn |Column (box) selection page down|
+|⌥ + |클릭하여 삽입 커서|
+|⌥⌘↑ |위에 삽입 커서 삽입|
+|⌥⌘↓ |아래에 삽입 커서 삽입|
+|⌘U |마지막 커서 동작 실행 취소|
+|⇧⌥I |선택된 각 줄의 끝에 커서 삽입|
+|⌘L |현재 라인 선택|
+|⇧⌘L|현재 선택 항목 모두 선택|
+|⌘F2 |현재 단어 모든 발생 선택|
+|⌃⇧⌘→ / ← |선택 확장 / 축소|
+|⇧⌥ + 마우스 드래그 |열 (상자) 선택|
+|⇧⌥⌘↑ / ↓ |열 (상자) 위/아래 선택|
+|⇧⌥⌘← / → |열 (상자) 왼쪽/오른쪽 선택|
+|⇧⌥⌘PgUp |열 (상자) 페이지 위 선택|
+|⇧⌥⌘PgDn |열 (상자) 페이지 아래 선택|
 
-### Search and replace
+### 검색 및 교체
 |이름 | 설명 |
 |:--- |:---|
-|⌘F |Find|
-|⌥⌘F |Replace|
-|⌘G / ⇧⌘G |Find next/previous|
-|⌥Enter |Select all occurrences of Find match|
-|⌘D |Add selection to next Find match|
-|⌘K ⌘D |Move last selection to next Find match|
+|⌘F |찾기|
+|⌥⌘F |바꾸기|
+|⌘G / ⇧⌘G |다음/이전 찾기|
+|⌥Enter |찾기 일치 항목 모두 선택|
+|⌘D |다음 찾기 항목 선택 추가|
+|⌘K ⌘D |마지막 선택 항목 다음 찾기 항목 선택|
 
-### Rich languages editing
+### 다양한 언어 편집
 |이름 | 설명 |
 |:--- |:---|
-|⌃Space, ⌘I |Trigger suggestion|
-|⇧⌘Space |Trigger parameter hints|
-|⇧⌥F |Format document|
-|⌘K ⌘F |Format selection|
-|F12 |Go to Definition|
-|⌥F12 |Peek Definition
-|⌘K F12 |Open Definition to the side|
-|⌘. |Quick Fix|
-|⇧F12 |Show References|
-|F2 |Rename Symbol|
-|⌘K ⌘X |Trim trailing whitespace|
-|⌘K M |Change file language|
+|⌃Space, ⌘I |제안 트리거|
+|⇧⌘Space |매개변수 힌트 트리거|
+|⇧⌥F |문서 서식 지정|
+|⌘K ⌘F |선택 항목 서식 지정|
+|F12 |정의로 이동|
+|⌥F12 |빠른 미리 보기|
+|⌘K F12 |측면에 정의 열기|
+|⌘. |빠른 수정|
+|⇧F12 |참조 표시|
+|F2 |심볼 이름 변경|
+|⌘K ⌘X |뒤의 공백 제거|
+|⌘K M |파일 언어 변경|
 
-### Navigation
+### 탐색
 |이름 | 설명 |
 |:--- |:---|
-|⌘T |Show all Symbols|
-|⌃G |Go to Line...|
-|⌘P |Go to File...|
-|⇧⌘O |Go to Symbol...|
-|⇧⌘M |Show Problems panel|
-|F8 / ⇧F8 |Go to next/previous error or warning|
-|⌃⇧Tab |Navigate editor group history|
-|⌃- / ⌃⇧- |Go back/forward|
-|⌃⇧M |Toggle Tab moves focus|
+|⌘T |모든 심볼 표시|
+|⌃G |줄로 이동...|
+|⌘P |파일로 이동...|
+|⇧⌘O |심볼로 이동...|
+|⇧⌘M |문제 패널 표시|
+|F8 / ⇧F8 |다음/이전 오류 또는 경고로 이동|
+|⌃⇧Tab |편집기 그룹 히스토리 탐색|
+|⌃- / ⌃⇧- |뒤로/앞으로 이동|
+|⌃⇧M |탭 포커스 이동 토글|
 
-### Editor management
+### 편집기 관리
 |이름 | 설명 |
 |:--- |:---|
-|⌘W |Close editor|
-|⌘K F |Close folder|
-|⌘\ |Split editor|
-|⌘1 / ⌘2 / ⌘3 |Focus into 1st, 2nd, 3rd editor group|
-|⌘K ⌘← / ⌘K ⌘→ |Focus into previous/next editor group|
-|⌘K ⇧⌘← / ⌘K ⇧⌘→ |Move editor left/right|
-|⌘K ← / ⌘K → |Move active editor group|
+|⌘W |편집기 닫기|
+|⌘K F |폴더 닫기|
+|⌘\ |편집기 분할|
+|⌘1 / ⌘2 / ⌘3 |1번, 2번, 3번 편집기 그룹 포커스|
+|⌘K ⌘← / ⌘K ⌘→ |이전/다음 편집기 그룹 포커스|
+|⌘K ⇧⌘← / ⌘K ⇧⌘→ |편집기 좌우로 이동|
+|⌘K ← / ⌘K → |활성 편집기 그룹 이동|
 
-### File management
+### 파일 관리
 |이름 | 설명 |
 |:--- |:---|
-|⌘N |New File|
-|⌘O |Open File...|
-|⌘S |Save|
-|⇧⌘S |Save As...|
-|⌥⌘S |Save All|
-|⌘W |Close|
-|⌘K ⌘W |Close All|
-|⇧⌘T |Reopen closed editor|
-|⌘K Enter |Keep preview mode editor open|
-|⌃Tab / ⌃⇧Tab |Open next / previous|
-|⌘K P |Copy path of active file|
-|⌘K R |Reveal active file in Finder|
-|⌘K O |Show active file in new window/instance|
+|⌘N |새 파일|
+|⌘O |파일 열기...|
+|⌘S |저장|
+|⇧⌘S |다른 이름으로 저장...|
+|⌥⌘S |모두 저장|
+|⌘W |닫기|
+|⌘K ⌘W |모두 닫기|
+|⇧⌘T |닫은 편집기 다시 열기|
+|⌘K Enter |미리보기 모드 편집기 열어두기|
+|⌃Tab / ⌃⇧Tab |다음/이전 열기|
+|⌘K P |활성 파일의 경로 복사|
+|⌘K R |Finder에서 활성 파일 표시|
+|⌘K O |새 창/인스턴스에서 활성 파일 표시|
 
-### Display
+### 디스플레이
 |이름 | 설명 |
 |:--- |:---|
-|⌃⌘F Toggle |full screen|
-|⌥⌘0 Toggle |editor layout (horizontal/vertical)|
-|⌘= / ⇧⌘- |Zoom in/out|
-|⌘B Toggle |Sidebar visibility|
-|⇧⌘E |Show Explorer / Toggle focus|
-|⇧⌘F |Show Search|
-|⌃⇧G |Show Source Control|
-|⇧⌘D |Show Debug|
-|⇧⌘X |Show Extensions|
-|⇧⌘H |Replace in files|
-|⇧⌘J Toggle |Search details|
-|⇧⌘U |Show Output panel|
-|⇧⌘V |Open Markdown preview|
-|⌘K V |Open Markdown preview to the side|
-|⌘K Z |Zen Mode (Esc Esc to exit)|
+|⌃⌘F |전체 화면 토글|
+|⌥⌘0 |편집기 레이아웃(수평/수직) 토글|
+|⌘= / ⇧⌘- |확대/축소|
+|⌘B |사이드바 가시성 토글|
+|⇧⌘E |탐색기 표시/포커스 토글|
+|⇧⌘F |검색 표시|
+|⌃⇧G |소스 제어 표시|
+|⇧⌘D |디버그 표시|
+|⇧⌘X |확장 표시|
+|⇧⌘H |파일에서 교체|
+|⇧⌘J |검색 세부 사항 토글|
+|⇧⌘U |출력 패널 표시|
+|⇧⌘V |마크다운 미리 보기 열기|
+|⌘K V |마크다운 미리 보기 측면에 열기|
+|⌘K Z |전체 화면 모드 (Esc 두 번 누르면 종료)|
 
-### Debug
+### 디버그
 |이름 | 설명 |
 |:--- |:---|
-|F9 Toggle |breakpoint|
-|F5 |Start/Continue|
-|F11 / ⇧F11 |Step into/ out|
-|F10 |Step over|
-|⇧F5 |Stop|
-|⌘K ⌘I |Show hover|
+|F9 |중단점 토글|
+|F5 |시작/계속|
+|F11 / ⇧F11 |들어가기/나오기|
+|F10 |건너뛰기|
+|⇧F5 |중지|
+|⌘K ⌘I |호버 표시|
 
-### Integrated terminal
+### 통합 터미널
 |이름 | 설명 |
 |:--- |:---|
-|⌃` |Show integrated terminal|
-|⌃⇧` |Create new terminal|
-|⌘C |Copy selection|
-|⌘↑ / ↓ |Scroll up/down|
-|PgUp / PgDn |Scroll page up/down|
-|⌘Home / End |Scroll to top/bottom|
+|⌃` |통합 터미널 표시|
+|⌃⇧` |새 터미널 만들기|
+|⌘C |선택 복사|
+|⌘↑ / ↓ |위로/아래로 스크롤|
+|PgUp / PgDn |페이지 위/아래로 스크롤|
+|⌘Home / End |맨 위/맨 아래로 스크롤|
 
-## Reference
+## 참고
 [VScode Official Stie](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
