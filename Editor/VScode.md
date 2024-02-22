@@ -60,5 +60,15 @@
 |⇧⌥⌘PgUp |Column (box) selection page up|
 |⇧⌥⌘PgDn |Column (box) selection page down|
 
+### Search and replace
+|이름 | 설명 |
+|:--- |:---|
+|⌘F |Find|
+|⌥⌘F |Replace|
+|⌘G / ⇧⌘G |Find next/previous|
+|⌥Enter |Select all occurrences of Find match|
+|⌘D |Add selection to next Find match|
+|⌘K ⌘D |Move last selection to next Find match|
+
 ## Reference
 [VScode Official Stie](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
