@@ -320,6 +320,20 @@ __double underscores__
 
 ---
 
+## 2.10. 표 만들기
+
+- 표는 각각 | | 로 셀 구분을 한다.   
+- 첫 행과 다른 행을 |---|---| 이런 식으로로 구분짓는다.   
+- 추가로 |:--|:--| 이렇게 :를 추가하는 경우, 자동 크기 조절이 가능하다.
+
+```
+|이름 | 설명 |
+|:--- |:---|   
+|요소| 요소 |   
+|요소| 요소 |   
+|요소 | 요소 |  
+```
+
 ## Reference
 
 - [78 Tools for writing and previewing Markdown](http://mashable.com/2013/06/24/markdown-tools/)
