@@ -1103,6 +1103,48 @@ JVM은 객체에 대한 해시코드를 만들고 할당하여 각 객체가 고
 
 #### 1. Basic Class structure
 
+##### Access Attributes
+- class의 object로 생성된 attributes에 접근하기 위해서는 . 을 이용한다.
+```java
+public class Main {
+  int x = 10;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    myObj.x = 25; // x is now 25
+    System.out.println(myObj.x);
+  }
+}
+```
+
+- final로 선언하면, overriding을 막을 수 있다.
+```java
+public class Main {
+  final int x = 10;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    myObj.x = 25; // will generate an error: cannot assign a value to a final variable
+    System.out.println(myObj.x);
+  }
+}
+```
+
+- 여러 Attributes의 경우
+```java
+public class Main {
+  String fname = "John";
+  String lname = "Doe";
+  int age = 24;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    System.out.println("Name: " + myObj.fname + " " + myObj.lname);
+    System.out.println("Age: " + myObj.age);
+  }
+}
+```
+
 ##### package
 
 선언 :  
