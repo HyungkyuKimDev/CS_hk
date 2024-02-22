@@ -86,5 +86,18 @@
 |⌘K ⌘X |Trim trailing whitespace|
 |⌘K M |Change file language|
 
+### Navigation
+|이름 | 설명 |
+|:--- |:---|
+|⌘T |Show all Symbols|
+|⌃G |Go to Line...|
+|⌘P |Go to File...|
+|⇧⌘O |Go to Symbol...|
+|⇧⌘M |Show Problems panel|
+|F8 / ⇧F8 |Go to next/previous error or warning|
+|⌃⇧Tab |Navigate editor group history|
+|⌃- / ⌃⇧- |Go back/forward|
+|⌃⇧M |Toggle Tab moves focus|
+
 ## Reference
 [VScode Official Stie](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
