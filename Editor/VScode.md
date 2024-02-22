@@ -146,5 +146,14 @@
 |⌘K V |Open Markdown preview to the side|
 |⌘K Z |Zen Mode (Esc Esc to exit)|
 
+### Debug
+|이름 | 설명 |
+|:--- |:---|
+|F9 Toggle |breakpoint|
+|F5 |Start/Continue|
+|F11 / ⇧F11 |Step into/ out|
+|F10 |Step over|
+|⇧F5 |Stop|
+|⌘K ⌘I |Show hover|
 ## Reference
 [VScode Official Stie](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
