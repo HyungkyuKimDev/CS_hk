@@ -155,5 +155,16 @@
 |F10 |Step over|
 |⇧F5 |Stop|
 |⌘K ⌘I |Show hover|
+
+### Integrated terminal
+|이름 | 설명 |
+|:--- |:---|
+|⌃` |Show integrated terminal|
+|⌃⇧` |Create new terminal|
+|⌘C |Copy selection|
+|⌘↑ / ↓ |Scroll up/down|
+|PgUp / PgDn |Scroll page up/down|
+|⌘Home / End |Scroll to top/bottom|
+
 ## Reference
 [VScode Official Stie](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
