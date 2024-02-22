@@ -42,6 +42,23 @@
 |⌘/ |Toggle line comment|
 |⇧⌥A |Toggle block comment|
 
+### Multi-cursor and selection
+|이름 | 설명 |
+|:--- |:---|
+|⌥ + |click Insert cursor|
+|⌥⌘↑ |Insert cursor above|
+|⌥⌘↓ |Insert cursor below|
+|⌘U |Undo last cursor operation|
+|⇧⌥I |Insert cursor at end of each line selected|
+|⌘L |Select current line|
+|⇧⌘L|Select all occurrences of current selection|
+|⌘F2 |Select all occurrences of current word|
+|⌃⇧⌘→ / ← |Expand / shrink selection|
+|⇧⌥ + drag mouse |Column (box) selection|
+|⇧⌥⌘↑ / ↓ |Column (box) selection up/down|
+|⇧⌥⌘← / → |Column (box) selection left/right|
+|⇧⌥⌘PgUp |Column (box) selection page up|
+|⇧⌥⌘PgDn |Column (box) selection page down|
 
 ## Reference
 [VScode Official Stie](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
