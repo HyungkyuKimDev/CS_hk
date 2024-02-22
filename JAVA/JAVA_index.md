@@ -569,7 +569,7 @@ public class Main {
      - nextInt() , next()
   2. nextLine() : 한 줄씩 처리
 
-### 8. String Method
+### 9. String Method
 
 - isEmpty
 
@@ -632,7 +632,7 @@ public class StringMagic {
 
 <br></br>
 
-### 9. wrapper class
+### 10. wrapper class
 
 - 기본 타입의 데이터를 객체로 표현하기 위해 사용하는 class
 - wrapper class로 감싼 기본 타입 값은 외부에서 변경할 수 없으며, 변경을 위해선 새로운 wrapper object를 만들어야 한다.
@@ -773,7 +773,7 @@ System.out.println("문자열 boolean값 변환 : "+bool);
 
 [Inpa Dev 👨‍💻:티스토리](https://inpa.tistory.com/entry/JAVA-☕-wrapper-class-Boxing-UnBoxing)
 
-### 10. list
+### 11. list
 
 저장된 요소들의 순서가 있고, 데이터 간 중복이 가능하고, index 번호에 의해 정렬된다.
 
@@ -945,7 +945,7 @@ System.out.println("문자열 boolean값 변환 : "+bool);
   }
   ```
 
-### 11. OOP(Object Oriented Programming)
+### 12. OOP(Object Oriented Programming)
 
 #### 0. Concept
 
