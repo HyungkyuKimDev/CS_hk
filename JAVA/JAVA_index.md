@@ -964,6 +964,24 @@ JVM은 객체에 대한 해시코드를 만들고 할당하여 각 객체가 고
 생성자의 이름은 항상 클래스의 이름과 동일하며 초기 객체 상태를 설정하기 위한 매개 변수를 사용할 수 있음  
 생성자를 작성하지 않는 경우 JVM은 기본 생성자를 할당하며 이는 매개변수를 허용하지 않기 때문에 매개변수가 필요한 경우, 개발자가 직접 생성자를 작성해야함
 
+- Code로 설명
+  - 1. class를 만든다.
+    ```java
+    // Main.java
+    public class Main {
+      int x = 5;
+    }
+    ```
+  - 2. 해당 class의 object를 그 class의 이름에 'new' 키워드를 사용해 만든다.
+    ```java
+    class Second {
+      public static void main(String[] args) {
+        Main myObj = new Main(); // Main class, new 키워드 사용
+        System.out.println(myObj.x);
+      }
+    }
+    ```
+
 4개 원칙
 
 1.  추상화(Abstraction)  
