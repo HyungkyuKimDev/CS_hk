@@ -982,6 +982,45 @@ JVM은 객체에 대한 해시코드를 만들고 할당하여 각 객체가 고
     }
     ```
 
+- Class Method
+  ```java
+  public class Main {
+  static void myMethod() {
+    System.out.println("Hello World!");
+  }
+
+  public static void main(String[] args) {
+    myMethod();
+  }
+  }
+
+  // Outputs "Hello World!"
+  ```
+  - static vs public
+    - Method를 static으로 만들 경우, public과 달리 해당 class의 object 선언 없이 Method 사용이 가능하다.
+    ```java
+    public class Main {
+    // Static method
+    static void myStaticMethod() {
+      System.out.println("Static methods can be called without creating objects");
+    }
+  
+    // Public method
+    public void myPublicMethod() {
+      System.out.println("Public methods must be called by creating objects");
+    }
+  
+    // Main method
+    public static void main(String[] args) {
+      myStaticMethod(); // Call the static method
+      // myPublicMethod(); This would compile an error
+
+      Main myObj = new Main(); // Create an object of Main
+      myObj.myPublicMethod(); // Call the public method on the object
+    }
+    }
+    ```
+
 4개 원칙
 
 1.  추상화(Abstraction)  
