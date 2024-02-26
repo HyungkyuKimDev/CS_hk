@@ -1004,12 +1004,12 @@ JVM은 객체에 대한 해시코드를 만들고 할당하여 각 객체가 고
     static void myStaticMethod() {
       System.out.println("Static methods can be called without creating objects");
     }
-  
+
     // Public method
     public void myPublicMethod() {
       System.out.println("Public methods must be called by creating objects");
     }
-  
+
     // Main method
     public static void main(String[] args) {
       myStaticMethod(); // Call the static method
@@ -1021,7 +1021,39 @@ JVM은 객체에 대한 해시코드를 만들고 할당하여 각 객체가 고
     }
     ```
 
-4개 원칙
+- Java Modifiers （제어자)
+  - classes, attributes, methods 와 constructors를 접근하는 레벨을 나누기 위해 사용
+  - 1. Access Modifiers (접근 수정자) - 접근 레벨을 제어
+  - 2. Non-Access Modifiers (비접근 수정자) - 접근 레벨을 제어하지 않으나, 다른 기능을 제공
+
+|Access Modifiers | |
+|:---   |:---        |
+|For Class| |
+|Modifier | Description|
+|public|	다른 모든 class 접근 가능|
+|default|	같은 package 내에 class에 접근 가능. 제어자를 설정하지 않을때 사용.|  
+|For attributes, methods and constructors| |
+|public|	모든 class 접근 가능|
+|private|	선언된 class 내에서만 사용 가능|
+|default|	같은 package 내에 class에 접근 가능. 제어자를 설정하지 않을때 사용.|
+|protected|	같은 package 내에 또는 서브(자식)클래스내에서만 접근 가능.|
+
+|Non-Access Class | |
+|:---   |:---        |
+| For Class | |
+| Modifiers | Description |
+| final | 다른 클래스에서 상속할 수 없는 클래스. |
+| abstract | 클래스를 객체로 생성할 수 없음. (추상 클래스에 접근하려면 다른 클래스에서 상속해야 함.) |
+| For attributes, methods and constructors | |
+| final | 속성 및 메서드를 재정의/수정할 수 없음. |
+| static | 속성 및 메서드는 객체가 아닌 클래스에 속함. |
+| abstract | 추상 클래스에서만 사용할 수 있으며, 메서드에만 사용된다. 메서드에는 본문이 없으며, 예를 들어 `abstract void run();`. 본문은 하위 클래스에서 제공 (상속됨). |
+| transient | 객체를 직렬화할 때 속성 및 메서드가 건너뜀 |
+| synchronized | 메서드는 한 번에 하나의 스레드만 액세스 가능 |
+| volatile | 속성의 값이 스레드별로 캐시되지 않으며 항상 "메인 메모리"에서 읽힘 |
+
+Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
+<br></br>
 
 1.  추상화(Abstraction)  
     추상화는 공개할 정보와 숨길 정보를 구분하는 것  
