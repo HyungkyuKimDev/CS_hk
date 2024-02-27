@@ -1238,6 +1238,13 @@ public class Main {
 
 ##### package
 
+Tip : Java에서 사용하는 하나의 Folder라고 생각하면 편함
+
+- 종류
+  - Built-in Packages (packages from the Java API)
+  - User-defined Packages (create your own packages)
+
+- Built-in Packages (packages from the Java API)
 선언 :  
 `java package 패키지명;`
 
@@ -1245,6 +1252,9 @@ public class Main {
 
 ```java
 ex)
+import package.name.Class;   // Import a single class
+import package.name.*;   // Import the whole package
+
 com.samsung.projectName
 com.lg.projectName
 com.hyudai.projectName
@@ -1273,6 +1283,29 @@ import문으로 지정된 패키지의 하위 패키지는 import 대상 아님
 하위 패키지에 있는 클래스들도 사용하고 싶다면 import문을 하나 더 작성해야함  
 서로 다른 패키지에 동일한 클래스 이름이 존재  
 두 패키지가 모두 import되어 있을 경우 패키지 이름 전체를 기술해야함
+
+- User-defined Packages (create your own packages)
+
+package 제작을 위해서는 package 키워드를 사용한다.
+```java
+package mypack;
+class MyPackageClass {
+  public static void main(String[] args) {
+    System.out.println("This is my package!");
+  }
+}
+```
+
+제작한 뒤에는 저장하고 compile하는 과정을 거친다.
+```java
+C:\Users\Your Name>javac MyPackageClass.java
+C:\Users\Your Name>javac -d . MyPackageClass.java // -d는 compile 위치를 지정한다. .은 현재 디렉터리를 의미 
+``` 
+
+해당 패키지 실행
+```java
+C:\Users\Your Name>java mypack.MyPackageClass
+```
 
 #### 2. toString
 
