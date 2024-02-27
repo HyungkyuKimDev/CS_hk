@@ -1110,6 +1110,8 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
             }
         }
         ```
+    1. getter - private으로 설정된 값을 가져감(사용자가 접근 불가능)
+    2. setter - private으로 설정된 값을 변경함(사용자가 수정)
 
         ```java
         //(구현 은닉)implementation hiding
