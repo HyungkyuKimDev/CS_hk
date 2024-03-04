@@ -49,9 +49,10 @@ Java 프로그램을 compile 하고 Run 하는데 필요
 [6. 생성자](#6-생성자)
 [7. Method](#7-method)
 [8. Scanner ](#8-scanner)
-[9. wrapper class](#9-wrapper-class)
-[10. list](#10-list)
-[11. OOP](#11-oop)
+[9. String Method](#9-string-method)
+[10. wrapper class](#10-wrapper-class)
+[11. list](#11-list)
+[12. OOP](#12-oopobject-oriented-programming)
 
 ### 1. 자료형
 
