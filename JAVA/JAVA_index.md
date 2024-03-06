@@ -53,6 +53,7 @@ Java 프로그램을 compile 하고 Run 하는데 필요
 [10. wrapper class](#10-wrapper-class)
 [11. list](#11-list)
 [12. OOP](#12-oopobject-oriented-programming)
+[13. etc](#13-etc)
 
 ### 1. 자료형
 
@@ -1643,6 +1644,8 @@ MEDIUM
 HIGH
 */
 ```
+
+### 13. etc
 
 ### Reference
 
