@@ -1066,7 +1066,7 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
     Abstract Class 또는 Abstract Method는 abstract를 붙여서 선언해야 한다. (interface와 차이)
     sub class는 하나의 abstract calss만 override 할수있다.
     Abstract Clas는 Abstract Method를 하나 이상 가지고 있어야 한다.
-    
+
     ```java
     // Abstract class
     abstract class Animal {
@@ -1132,83 +1132,41 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
     정보은닉의 방법으로 접근제어자를 사용 외부에서 접근할 수 없도록 함 (인터페이스 사용 방식)  
     구현은닉은 객체가 책임을 이행하는 방식을 수정할 수 있도록 하여 개발자에게 자유 제공  
     설계가 변경되었을 때 유용하게 사용
+    
+    interface의 경우 클래스가 아니며, 비어있는 abstract method만 포함한다.   
+    변수는 static이어야만 한다.   
+    다중상속이 가능하다.(abstract와 차이점)
 
-        ```java
-        //정보 은닉(information hiding)
-        class InformationHiding
-        {
-            //Restrict direct access to inward data
-            private ArrayList items = new ArrayList();
-
-            //Provide a way to access data - internal logic can     safely be changed in future
-            public ArrayList getItems(){
-                return items;
-            }
-        }
-        ```
     1. getter - private으로 설정된 값을 가져감(사용자가 접근 불가능)
     2. setter - private으로 설정된 값을 변경함(사용자가 수정)
 
         ```java
-        //(구현 은닉)implementation hiding
-
-        interface ImplemenatationHiding {
-        Integer sumAllItems(ArrayList items);
+        // Interface
+        interface Animal {
+          public void animalSound(); // interface method (does not have a body)
+          public void sleep(); // interface method (does not have a body)
         }
-        class InformationHiding implements  ImplemenatationHiding
-        {
-        //Restrict direct access to inward data
-        private ArrayList items = new ArrayList();
-
-            //Provide a way to access data - internal logic     can safely be changed in future
-            public ArrayList getItems(){
-            return items;
-            }
-
-            public Integer sumAllItems(ArrayList items) {
-                //Here you may do N number of things in any     sequence
-                //Which you do not want your clients to know
-                //You can change the sequence or even whole     logic
-                //without affecting the client
-            }
-
+        
+        // Pig "implements" the Animal interface
+        class Pig implements Animal {
+          public void animalSound() {
+            // The body of animalSound() is provided here
+            System.out.println("The pig says: wee wee");
+          }
+          public void sleep() {
+            // The body of sleep() is provided here
+            System.out.println("Zzz");
+          }
+        }
+        
+        class Main {
+          public static void main(String[] args) {
+            Pig myPig = new Pig();  // Create a Pig object
+            myPig.animalSound();
+            myPig.sleep();
+          }
         }
         ```
-
-3.  상속(Inheritance)
-    부모클래스의 속성과 행동을 사용하게 됨  
-    코드의 재사용ㅇ성과 유지보수를 위해 사용  
-    상속을 위해서 extends 키워드로 부모 클래스 명시해 사용  
-    상속되는 클래스 super 클래스  
-    상속받는 클래스 sub 클래스
-
-    sub 클래스는 super 클래스의 non-private 멤버들을 상속 받음  
-    생성자는 멤버가 아니기 때문에 상속되지 않으나,  
-    sub 클래스에서 super 클래스의 생성자를 호출 가능
-
-    ```java
-    class Vehicle {
-      protected String brand = "Ford";        // Vehicle attribute
-      public void honk() {                    // Vehicle method
-        System.out.println("Tuut, tuut!");
-      }
-    }
-    
-    class Car extends Vehicle {
-      private String modelName = "Mustang";    // Car attribute
-      public static void main(String[] args) {
-      
-        // Create a myCar object
-        Car myCar = new Car();
-    
-        // Call the honk() method (from the Vehicle class) on the myCar object
-        myCar.honk();
-    
-        // Display the value of the brand attribute (from the Vehicle class) and the value of the modelName from the Car class
-        System.out.println(myCar.brand + " " + myCar.modelName);
-      }
-    }
-    ```
 
 4.  다형성(polymorphism)
     다향성은 같은 자료형에 열러가지 객체 대입해 다양한 결과를 얻어내는 성질  
