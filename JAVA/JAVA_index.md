@@ -1146,7 +1146,7 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
           public void animalSound(); // interface method (does not have a body)
           public void sleep(); // interface method (does not have a body)
         }
-        
+
         // Pig "implements" the Animal interface
         class Pig implements Animal {
           public void animalSound() {
@@ -1158,12 +1158,40 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
             System.out.println("Zzz");
           }
         }
-        
+
         class Main {
           public static void main(String[] args) {
             Pig myPig = new Pig();  // Create a Pig object
             myPig.animalSound();
             myPig.sleep();
+          }
+        }
+        ```
+
+        ```java
+        // 다중상속
+         interface FirstInterface {
+          public void myMethod(); // interface method
+        }
+        
+        interface SecondInterface {
+          public void myOtherMethod(); // interface method
+        }
+        
+        class DemoClass implements FirstInterface, SecondInterface {
+          public void myMethod() {
+            System.out.println("Some text..");
+          }
+          public void myOtherMethod() {
+            System.out.println("Some other text...");
+          }
+        }
+        
+        class Main {
+          public static void main(String[] args) {
+            DemoClass myObj = new DemoClass();
+            myObj.myMethod();
+            myObj.myOtherMethod();
           }
         }
         ```
