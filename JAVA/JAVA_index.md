@@ -1058,9 +1058,38 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
 
 1.  추상화(Abstraction)  
     추상화는 공개할 정보와 숨길 정보를 구분하는 것  
-    일반적으로 데이터 추상화와 제어 추상확가 있음
+    
+    - Abstract Class - object 생성할 수 없음, 다른 Class부터 inherited 되어서 사용
+    - Abstract Method - Abstract Class로부터 사용되고 body를 가지지 않는다. subclass가 body를 제공한다.
 
-    데이터 추상화는 복잡한 데이터 형태를 생성하기 위해 여러 작은 데이터 타입을 사용하는 방법
+    ```java
+    // Abstract class
+    abstract class Animal {
+      // Abstract method (does not have a body)
+      public abstract void animalSound();
+      // Regular method
+      public void sleep() {
+        System.out.println("Zzz");
+      }
+    }
+    //Animal myObj = new Animal(); // will generate an error
+
+    // Subclass (inherit from Animal)
+    class Pig extends Animal {
+      public void animalSound() {
+        // The body of animalSound() is provided here
+        System.out.println("The pig says: wee wee");
+      }
+    }
+
+    class Main {
+      public static void main(String[] args) {
+        Pig myPig = new Pig(); // Create a Pig object
+        myPig.animalSound();
+        myPig.sleep();
+      }
+    }
+    ```
 
     ```java
     // 데이터 추상화
