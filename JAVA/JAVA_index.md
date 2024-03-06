@@ -1173,11 +1173,11 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
          interface FirstInterface {
           public void myMethod(); // interface method
         }
-        
+
         interface SecondInterface {
           public void myOtherMethod(); // interface method
         }
-        
+
         class DemoClass implements FirstInterface, SecondInterface {
           public void myMethod() {
             System.out.println("Some text..");
@@ -1186,7 +1186,7 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
             System.out.println("Some other text...");
           }
         }
-        
+
         class Main {
           public static void main(String[] args) {
             DemoClass myObj = new DemoClass();
@@ -1570,6 +1570,78 @@ public class Main {
 }
 
 // Outputs 10
+```
+
+#### 5.Enums
+
+Enums는 constants의 group을 의미하는 class다.   
+변화하지 않는 상수를 효율적으로 사용하기 위해 쓴다.
+
+```java
+public class Main {
+  enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+  }
+
+  public static void main(String[] args) {
+    Level myVar = Level.MEDIUM; 
+    System.out.println(myVar);
+  }
+}
+
+// OUTPUT : MEDIUM
+```
+
+사용 예 1 : switch문
+
+```java
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Level myVar = Level.MEDIUM;
+
+    switch(myVar) {
+      case LOW:
+        System.out.println("Low level");
+        break;
+      case MEDIUM:
+         System.out.println("Medium level");
+        break;
+      case HIGH:
+        System.out.println("High level");
+        break;
+    }
+  }
+}
+
+/* 
+OUTPUT :
+
+Medium level
+*/
+```
+
+사용 예 2 : loop문 - values() Method로 enums의 값들을 배열 형태로 return 받을 수 있다.
+
+```java
+for (Level myVar : Level.values()) {
+  System.out.println(myVar);
+}
+
+/* 
+OUTPUT :
+
+LOW
+MEDIUM
+HIGH
+*/
 ```
 
 ### Reference
