@@ -1647,6 +1647,89 @@ HIGH
 
 ### 13. etc
 
+#### 1. Date and Time
+
+java는 a built-in Date class(내장된 날짜 클래스)가 없지만, java.time package를 활용해서 해결할 수 있다.
+
+|Class|	Description|
+|:--|:---|
+|Class|	Description|
+|LocalDate|	Represents a date (year, month, day (yyyy-MM-dd))|
+|LocalTime|	Represents a time (hour, minute, second and nanoseconds (HH-mm-ss-ns))|
+|LocalDateTime|	Represents both a date and a time (yyyy-MM-dd-HH-mm-ss-ns)|
+|DateTimeFormatter|	Formatter for displaying and parsing date-time objects|
+
+예시 1 : 현재 날짜 나타내기
+
+```java
+import java.time.LocalDate; // import the LocalDate class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDate myObj = LocalDate.now(); // Create a date object
+    System.out.println(myObj); // Display the current date
+  }
+}
+// 2024-03-06
+```
+
+예시 2 : 현재 시간 나타내기
+
+```java
+import java.time.LocalTime; // import the LocalTime class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalTime myObj = LocalTime.now();
+    System.out.println(myObj);
+  }
+}
+// 19:49:42.327771
+```
+
+예시 3 : 현재 날짜 및 시간 나타내기
+
+```java
+import java.time.LocalDateTime; // import the LocalDateTime class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDateTime myObj = LocalDateTime.now();
+    System.out.println(myObj);
+  }
+}
+// 2024-03-06T19:49:42.327210
+```
+
+예시 4 : 날짜 시간 형식 조정
+
+```java
+import java.time.LocalDateTime; // Import the LocalDateTime class
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDateTime myDateObj = LocalDateTime.now();
+    System.out.println("Before formatting: " + myDateObj);
+    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+    String formattedDate = myDateObj.format(myFormatObj);
+    System.out.println("After formatting: " + formattedDate);
+  }
+}
+// Before Formatting: 2024-03-06T19:49:42.327332
+// After Formatting: 06-03-2024 19:49:42
+```
+
+* ofPattern() Method 사용법
+
+|Value | Example|
+|:--|:---|
+|yyyy-MM-dd|	"1988-09-29"|
+|dd/MM/yyyy|	"29/09/1988"|
+|dd-MMM-yyyy|	"29-Sep-1988"|
+|E, MMM dd yyyy|	"Thu, Sep 29 1988"|
+
 ### Reference
 
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)  
