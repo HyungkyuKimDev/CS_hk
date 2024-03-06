@@ -1456,6 +1456,101 @@ class Child extends Parent(){
 }
 ```
 
+#### 4.Inner Class(nest class)
+
+class 안에 또 다른 class를 넣음으로써 코드를 더욱 가독성 있고 관리 가능하도록 한다.
+
+```java
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    int y = 5;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass myOuter = new OuterClass();
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    System.out.println(myInner.y + myOuter.x);
+  }
+}
+
+// Outputs 15 (5 + 10)
+```
+
+private 또는 protected로 inner class를 사용할 경우 외부 객체로부터 Inner class에 접근하는 것을 막을 수 있다.
+
+```java
+class OuterClass {
+  int x = 10;
+
+  private class InnerClass {
+    int y = 5;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass myOuter = new OuterClass();
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    System.out.println(myInner.y + myOuter.x);
+  }
+}
+
+/*
+Main.java:13: error: OuterClass.InnerClass has private access in OuterClass
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+              ^
+*/
+```
+
+static으로 선언한 경우, outer class의 object 생성 없이도 inner class에 접근이 가능하다.
+
+```java
+class OuterClass {
+  int x = 10;
+
+  static class InnerClass {
+    int y = 5;
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass.InnerClass myInner = new OuterClass.InnerClass();
+    System.out.println(myInner.y);
+  }
+}
+
+// Outputs 5
+```
+
+inner class를 사용함으로써 outer class의 attributes 나 methods 접근이 가능하다.
+
+```java
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    public int myInnerMethod() {
+      return x;
+    }
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass myOuter = new OuterClass();
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    System.out.println(myInner.myInnerMethod());
+  }
+}
+
+// Outputs 10
+```
+
 ### Reference
 
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)  
