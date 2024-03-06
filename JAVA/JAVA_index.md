@@ -1058,10 +1058,15 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
 
 1.  추상화(Abstraction)  
     추상화는 공개할 정보와 숨길 정보를 구분하는 것  
+    추상 클래스를 상속받아서 기능을 이용, 확장하는 목적
     
     - Abstract Class - object 생성할 수 없음, 다른 Class부터 inherited 되어서 사용
     - Abstract Method - Abstract Class로부터 사용되고 body를 가지지 않는다. subclass가 body를 제공한다.
 
+    Abstract Class 또는 Abstract Method는 abstract를 붙여서 선언해야 한다. (interface와 차이)
+    sub class는 하나의 abstract calss만 override 할수있다.
+    Abstract Clas는 Abstract Method를 하나 이상 가지고 있어야 한다.
+    
     ```java
     // Abstract class
     abstract class Animal {
@@ -1076,6 +1081,7 @@ Reference : [w3School](https://www.w3schools.com/java/java_modifiers.asp)
 
     // Subclass (inherit from Animal)
     class Pig extends Animal {
+      @Override
       public void animalSound() {
         // The body of animalSound() is provided here
         System.out.println("The pig says: wee wee");
