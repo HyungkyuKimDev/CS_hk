@@ -1075,6 +1075,99 @@ public class Main {
 }
 ```
 
+#### 4. HashSet
+
+HashSet은 중복을 허용하지 않는 집합(set) 자료구조이다.   
+따라서, 중복을 허용하지 않는 경우 사용에 좋다.
+
+- 기본 사용
+
+```java
+import java.util.HashSet; // Import the HashSet class
+
+HashSet<String> cars = new HashSet<String>();
+```
+
+- Method
+
+1. add() - 값 추가
+
+```java
+// Import the HashSet class
+import java.util.HashSet;
+
+public class Main {
+  public static void main(String[] args) {
+    HashSet<String> cars = new HashSet<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("BMW");
+    cars.add("Mazda");
+    System.out.println(cars);
+  }
+}
+```
+2. contains() - 요소 존재 확인
+
+```java
+cars.contains("Mazda");
+```
+
+3. remove(), clear() - 요소 삭제
+
+```java
+cars.remove("Volvo");
+
+// 요소 전체 삭제
+cars.clear()
+```
+
+4. size() - 크기 확인
+
+```java
+cars.size()
+```
+
+- Loop
+
+```java
+for (String i : cars) {
+  System.out.println(i);
+}
+```
+
+- HashSet에서 다른 타입을 사용할때는 반드시 wrapper class로 사용해야한다.(key, value가 object 이므로)
+
+
+```java
+import java.util.HashSet;
+
+public class Main {
+  public static void main(String[] args) {
+
+    // Create a HashSet object called numbers
+    HashSet<Integer> numbers = new HashSet<Integer>();
+
+    // Add values to the set
+    numbers.add(4);
+    numbers.add(7);
+    numbers.add(8);
+
+    // Show which numbers between 1 and 10 are in the set
+    for(int i = 1; i <= 10; i++) {
+      if(numbers.contains(i)) {
+        System.out.println(i + " was found in the set.");
+      } else {
+        System.out.println(i + " was not found in the set.");
+      }
+    }
+  }
+}
+```
+
+- 일반적으로 처리 속도는 HashMap이 HashSet 보다 빠르다.
+
 ### 12. OOP(Object Oriented Programming)
 
 #### 0. Concept
