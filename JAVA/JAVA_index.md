@@ -818,7 +818,7 @@ System.out.println("문자열 boolean값 변환 : "+bool);
 
   <br></br>
 
-1. array list
+#### 1. array list
 
   ````java
   import java.util.ArrayList;
@@ -935,7 +935,7 @@ public class Main {
 
   <br></br>
 
-2. linked list
+#### 2. linked list
 
   - LinkedList vs ArrayList   
     - LinkedList도 ArrayList와 동일한 Method를 보유하고 있다.(둘 다 List interface를 Implement하기 때문) 
@@ -969,6 +969,10 @@ public class Main {
   |removeLast()|	Remove an item from the end of the list.|
   |getFirst()|	Get the item at the beginning of the list.|
   |getLast()|	Get the item at the end of the list.|
+
+<br></br>
+
+#### 3. HashMap
 
 
 ### 12. OOP(Object Oriented Programming)
