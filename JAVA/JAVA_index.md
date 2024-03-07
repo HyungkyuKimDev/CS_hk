@@ -636,7 +636,7 @@ public class StringMagic {
 
 ### 10. wrapper class
 
-- 기본 타입의 데이터를 객체로 표현하기 위해 사용하는 class
+- 기본 타입(primitice)의 데이터를 객체(object)로 표현하기 위해 사용하는 class (collection 등에서 사용)
 - wrapper class로 감싼 기본 타입 값은 외부에서 변경할 수 없으며, 변경을 위해선 새로운 wrapper object를 만들어야 한다.
 - java.lang package에 포함되어 있기 때문에, 사용에 있어 package를 불러올 필요 없다.
 
@@ -650,13 +650,16 @@ Double num2 = new Double(1.11); // 기본형 타입 실수를 래퍼 클래스�
 Double num2 = 1.11;
 ```
 
-- 기본 타입
-
-  - byte short int long float double char boolean
-
-- wrapper class
-
-  - Byte Short Integer Long Float Double Character Boolean
+|Primitive Data Type |Wrapper Class|
+|:---|:---|
+|byte|Byte|
+|short|Short|
+|int|Integer|
+|long|Long|
+|float|Float|
+|double|Double|
+|boolean|Boolean|
+|char|Character|
 
 - 상호 변환
   - Boxing : 기본 타입의 데이터 → 래퍼 클래스의 인스턴스로 변환
@@ -1950,6 +1953,70 @@ public class Main {
 |dd/MM/yyyy|	"29/09/1988"|
 |dd-MMM-yyyy|	"29-Sep-1988"|
 |E, MMM dd yyyy|	"Thu, Sep 29 1988"|
+
+#### 2. Iterator(반복자)
+
+Iterator는 ArrayList 나 HashSet과 같은 Collection에서 loop에 사용하기 위한 object이다.   
+java.util package를 통해 사용한다.
+
+- 기본 사용
+
+```java
+// Import the ArrayList class and the Iterator class
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Main {
+  public static void main(String[] args) {
+
+    // Make a collection
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+
+    // Get the iterator
+    Iterator<String> it = cars.iterator();
+
+    // Print the first item
+    System.out.println(it.next());
+  }
+}
+```
+
+- Loop
+
+```java
+while(it.hasNext()) { // hasNext() 다음 요소가 있는가 판명
+  System.out.println(it.next()); // next() 다음 요소 반환
+}
+```
+
+- remove() - 요소 삭제
+
+```java
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> numbers = new ArrayList<Integer>();
+    numbers.add(12);
+    numbers.add(8);
+    numbers.add(2);
+    numbers.add(23);
+    Iterator<Integer> it = numbers.iterator();
+    while(it.hasNext()) {
+      Integer i = it.next();
+      if(i < 10) {
+        it.remove();
+      }
+    }
+    System.out.println(numbers);
+  }
+}
+```
 
 ### Reference
 
