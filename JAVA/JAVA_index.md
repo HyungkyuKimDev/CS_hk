@@ -974,6 +974,106 @@ public class Main {
 
 #### 3. HashMap
 
+요소들을 key/value pair로 저장하여, ArrayList가 index number로 요소에 접근했던 것과 달리,   
+String과 같은 Another Type으로도 접근이 가능하다.    
+key/value는 각각 같은 type 또는 다른 type으로 사용이 가능하다.
+
+- 기본 사용 - HashMap을 import 한 뒤 사용한다.
+
+```java
+import java.util.HashMap; // import the HashMap class
+
+HashMap<String, String> capitalCities = new HashMap<String, String>();
+```
+
+- Method 
+
+1. put() - 요소 추가
+
+```java
+// Import the HashMap class
+import java.util.HashMap;
+
+public class Main {
+  public static void main(String[] args) {
+    // Create a HashMap object called capitalCities
+    HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+    // Add keys and values (Country, City)
+    capitalCities.put("England", "London");
+    capitalCities.put("Germany", "Berlin");
+    capitalCities.put("Norway", "Oslo");
+    capitalCities.put("USA", "Washington DC");
+    System.out.println(capitalCities);
+  }
+}
+```
+
+2. get() - 요소 접근, key 값으로 value를 얻음
+
+```java
+capitalCities.get("England");
+```
+
+3. remove() - 요소 삭제
+
+```java
+capitalCities.remove("England");
+
+//전부 삭제
+capitalCities.clear();
+```
+
+4. size() - 요소 크기 확인
+
+```java
+capitalCities.size();
+```
+
+- Loop
+
+1. keySet() - key가 필요한 경우
+
+```java
+// Print keys
+for (String i : capitalCities.keySet()) {
+  System.out.println(i);
+}
+```
+
+2. values() - value가 필요한 경우
+
+```java
+// Print values
+for (String i : capitalCities.values()) {
+  System.out.println(i);
+}
+```
+
+- HashMap에서 다른 타입을 사용할때는 반드시 wrapper class로 사용해야한다.(key, value가 object 이므로)
+
+```java
+// Import the HashMap class
+import java.util.HashMap;
+
+public class Main {
+  public static void main(String[] args) {
+
+    // Create a HashMap object called people
+    HashMap<String, Integer> people = new HashMap<String, Integer>();
+
+
+    // Add keys and values (Name, Age)
+    people.put("John", 32);
+    people.put("Steve", 30);
+    people.put("Angie", 33);
+
+    for (String i : people.keySet()) {
+      System.out.println("key: " + i + " value: " + people.get(i));
+    }
+  }
+}
+```
 
 ### 12. OOP(Object Oriented Programming)
 
