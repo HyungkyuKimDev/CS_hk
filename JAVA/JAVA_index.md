@@ -2018,6 +2018,89 @@ public class Main {
 }
 ```
 
+### 3. Exceptions
+
+Java 코드 실행시, 유저의 입력 오류 또는 개발자의 코드 오류가 발생할 경우가 있다.   
+오류 발생시, Exception(예외)를 발생시킨다.
+
+- try & catch
+  - try : 오류가 발생할 수 있는 코드 블록
+  - catch : 오류 발생시 실행되는 코드 블록
+
+  ```java
+  try {
+  //  Block of code to try
+  }
+  catch(Exception e) {
+    //  Block of code to handle errors
+  }
+  ```
+
+  ```java
+  public class Main {
+  public static void main(String[ ] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    }
+  }
+  }
+  ```
+
+- finally
+
+  오류 발생과 상관없이 실행되는 코드
+
+  ```java
+  public class Main {
+  public static void main(String[] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    } finally {
+      System.out.println("The 'try catch' is finished.");
+    }
+    }
+  }
+
+
+  /*
+  Something went wrong.
+  The 'try catch' is finished.
+  */
+  ```
+
+- throw
+  개발자가 custom error를 만들기 위해 사용하는 keyword    
+  exception type과 같이 사용 (Ex - ArithmeticException _ 산술연산 오류, FileNotFoundException _ 파일 못 찾음 오류, ArrayIndexOutOfBoundsException _ 배열 인덱스 범위 오류, SecurityException _ 보안 관련 오류 etc...)
+
+  ```java
+  public class Main {
+  static void checkAge(int age) {
+    if (age < 18) {
+      throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+    }
+    else {
+      System.out.println("Access granted - You are old enough!");
+    }
+  }
+
+  public static void main(String[] args) {
+    checkAge(15); // Set age to 15 (which is below 18...)
+  }
+  }
+
+  /* 
+  Exception in thread "main" java.lang.ArithmeticException: Access denied - You must be at least 18 years old.
+        at Main.checkAge(Main.java:4)
+        at Main.main(Main.java:12)
+  */
+  ```
+
 ### Reference
 
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)  
