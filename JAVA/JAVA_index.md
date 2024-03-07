@@ -795,6 +795,9 @@ System.out.println("문자열 boolean값 변환 : "+bool);
 
   import java.util.LinkedList; // LinkedList 선언 시
   import java.util.List;
+
+  ArrayList<String> cars = new ArrayList<String>(); 
+  // 사용 가능한 자료형 예시 : Integer, Boolean, Character , Double
   ```
 
   <br>은 제네릭이다.
@@ -815,7 +818,7 @@ System.out.println("문자열 boolean값 변환 : "+bool);
 
   <br></br>
 
-- Ex) array list
+1. array list
 
   ````java
   import java.util.ArrayList;
@@ -903,9 +906,36 @@ System.out.println("문자열 boolean값 변환 : "+bool);
   }
   ````
 
+* util.Collections package의 sort() method로 정렬하기
+
+문자열이면 알파벳 순으로 정렬해주고, integer면 크기 순으로 정렬해준다.
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;  // Import the Collections class
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+    myNumbers.add(33);
+    myNumbers.add(15);
+    myNumbers.add(20);
+    myNumbers.add(34);
+    myNumbers.add(8);
+    myNumbers.add(12);
+
+    Collections.sort(myNumbers);  // Sort myNumbers
+
+    for (int i : myNumbers) {
+      System.out.println(i);
+    }
+  }
+}
+  ```
+
   <br></br>
 
-- Ex) linked list
+2. linked list
 
   ```java
   import java.util.LinkedList;
