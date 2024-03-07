@@ -937,45 +937,39 @@ public class Main {
 
 2. linked list
 
+  - LinkedList vs ArrayList   
+    - LinkedList도 ArrayList와 동일한 Method를 보유하고 있다.(둘 다 List interface를 Implement하기 때문) 
+    - ArrayList의 경우, 하나의 array 안에 요소들이 위치하는 방식으로. 충분히 크지 않은 경우, 예전 요소를 제거해서 대체하는 방식으로 이루어진다.   
+    - LinkedList의 경우, 각각 container로 작용하는 방식으로. 각각의 요소들이 container로 연결된다.
+    - 따라서, ArrayList는 데이터를 저장하고 접근하는데 적합하고, LinkedList는 데이터를 제어하는데 적합하다.
+
   ```java
+  // Import the LinkedList class
   import java.util.LinkedList;
-  import java.util.List;
 
-  public class LinkedListTest01 {
-
-  public static void main(String[] args) {
-
-  	List<Integer> list = new LinkedList<>(); // LinkedList 생성
-
-  	list.add(1); // 값 추가
-  	list.add(2);
-  	list.add(3);
-  	list.add(4);
-
-  	System.out.print("추가된 값: ");
-  	for (int l : list) { // iterator를 이용해 리스트에 값 출력
-  		System.out.print(l + "\t");
-  	}
-  	System.out.println();
-
-  	list.set(2, 5); // 리스트 수정
-
-  	System.out.print("수정된 값: ");
-  	for (int l : list) { // iterator를 이용해 리스트에 값 출력
-  		System.out.print(l + "\t");
-  	}
-  	System.out.println();
-
-  	list.remove(1); // 리스트 삭제
-
-  	System.out.print("삭제된 값: ");
-  	for (int i = 0; i < list.size(); i++) { // 일반 for를 이용해서 반복
-  		System.out.print(list.get(i) + "\t"); // .get() 메서드를 이용해 리스트에 값 출력
-  	}
-  	System.out.println();
-  }
+  public class Main {
+    public static void main(String[] args) {
+      LinkedList<String> cars = new LinkedList<String>();
+      cars.add("Volvo");
+      cars.add("BMW");
+      cars.add("Ford");
+      cars.add("Mazda");
+      System.out.println(cars);
+    }
   }
   ```
+
+  LinkedList 메소드
+
+  |Method |Description|
+  |:--- |:--- |
+  |addFirst()|	Adds an item to the beginning of the list.|
+  |addLast()|	Add an item to the end of the list.|
+  |removeFirst()|	Remove an item from the beginning of the list.|
+  |removeLast()|	Remove an item from the end of the list.|
+  |getFirst()|	Get the item at the beginning of the list.|
+  |getLast()|	Get the item at the end of the list.|
+
 
 ### 12. OOP(Object Oriented Programming)
 
