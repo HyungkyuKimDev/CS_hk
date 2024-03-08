@@ -2101,6 +2101,68 @@ Java 코드 실행시, 유저의 입력 오류 또는 개발자의 코드 오류
   */
   ```
 
+  #### 4. Regural Expressions(정규 표현식)
+
+  Regular Expressions은 문자열 내에 패턴을 찾기 위해 사용한다.   
+  자바는 내장(built-in)된 Regular Expressions가 없기 때문에 java.util.regex package를 통해 사용할 수 있다.
+
+  - 내부 클래스
+    - Pattern Class - (검색을 위해) 패턴을 정의한다. 
+    - Matcher Class - 패턴 찾기 위해 사용한다.
+    - PatternSyntaxException Class - 정규 표현식 내에 문법 오류를 표시한다.
+
+  - 기본
+
+  ```java
+  import java.util.regex.Matcher;
+  import java.util.regex.Pattern;
+
+  public class Main {
+    public static void main(String[] args) {
+      Pattern pattern = Pattern.compile("w3schools", Pattern.CASE_INSENSITIVE); // compile 첫번째 parameter는 찾을 패턴, 두번째 parameter는 flag로 optional하고, 여기서는 case insenstive (대문자 소문자 구별 안함) 역할
+      // flag는 보통 1비트로 특정 동작을 수행할지 여부를 알려주는 변수다.(True False)
+      Matcher matcher = pattern.matcher("Visit W3Schools!"); // 대상 문자열
+      boolean matchFound = matcher.find(); // 패턴 찾아서 확인 True False 반환
+      if(matchFound) {
+        System.out.println("Match found");
+      } else {
+        System.out.println("Match not found");
+      }
+    }
+  }
+  // Outputs Match found
+  ```
+
+  - Flags 
+    - Pattern.CASE_INSENSITIVE - 대문자 소문자 구분을 무시
+    - Pattern.LITERAL - 특수 문자를 기능이 아니라 단순히 문자로 두고 찾음
+    - Pattern.UNICODE_CASE - CASE_INSENSITIVE flag와 같이 사용하고. 영어 알파벳 제외한 문자의 대문자 소문자 구분을 무시
+
+  - Regular Expression Patterns Ex
+    - Expression	Description using Brackets []
+      - [abc]	a 또는 b 또는 c가 일치
+      - [^abc]	^(부정) a 또는 b 또는 c가 불일치
+      - [0-9]	0 부터 9가 일치
+    
+    - Metacharacters (특수 문자)
+      - |	: | 로 or 과 같이 단어들 나열해서 찾음 Ex) cat|dog|fish
+      - .	: 어떤 문자 한개를 의미
+      - ^	: 해당 문자열로 시작되는지 찾음 Ex) ^Hello
+      - $	: 해당 문자열로 끝나는지 찾음 Ex) World$
+      - \d : 숫자를 찾음
+      - \s : 공백을 찾음
+      - \b : 공백, 탭, ",", "/" 등을 의미한다
+      - \uxxxx	: 16진수로 표현된 문자를 찾음 Ex) u0041 -> A 찾음
+
+    - Quantifiers (수량자) 
+      - 일치시킬 문자 또는 표현식 수를 찾음
+      - n+	적어도 하나의 n을 포함하는 문자열 
+      - n*	0번 또는 n번 이상 n을 포함하는 어떤 문자열 
+      - n?	0번 또는 1번 n을 포함하는 문자열 
+      - n{x}	x개의 n을 포함하는 문자열 
+      - n{x,y}	최소 x개부터 최대 y개의 n을 포함하는 문자열  
+      - n{x,}	최소 x개 이상의 n을 포함하는 문자열
+
 ### Reference
 
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)  
