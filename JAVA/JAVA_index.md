@@ -2163,6 +2163,107 @@ Java 코드 실행시, 유저의 입력 오류 또는 개발자의 코드 오류
       - n{x,y}	최소 x개부터 최대 y개의 n을 포함하는 문자열  
       - n{x,}	최소 x개 이상의 n을 포함하는 문자열
 
+#### 5. Threads
+
+메인 프로그램을 방해하지 않는 선에서, 프로그램을 동시에 작동시켜 효율성을 높인다.
+
+- Thread 생성
+  - Thread class를 extend해서 run() method를 오버라이딩한다.
+  
+  ```java
+  public class Main extends Thread {
+  public void run() {
+    System.out.println("This code is running in a thread");
+    }
+  }
+  ```
+
+  - Runnable interface를 implement하는 방법도 있다.
+
+  ```java
+  public class Main implements Runnable {
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+  }
+  ```
+
+- Thread 실행
+  - Thread class를 extend한 class는 class의 instance를 생성해 start() method를 사용하는 방식으로 Thread를 실행시킬 수 있다.
+
+  ```java
+  public class Main extends Thread {
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+  }
+  ```
+
+  - interface의 경우, Thread의 object constructor를 통해 실행시킨다.
+  ```java
+  public class Main implements Runnable {
+  public static void main(String[] args) {
+    Main obj = new Main();
+    Thread thread = new Thread(obj);
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+  }
+  ```
+
+- Concurrency Problems
+  - 쓰레드들 끼리 같은 변수를 writing하는 방식으로 프로그램이 진행될 경우, 해당 변수가 unpredictable 해지는 상황이 발생한다.
+
+  ```java
+  // amount 값이 unpredictable
+  public class Main extends Thread {
+  public static int amount = 0;
+
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    System.out.println(amount);
+    amount++;
+    System.out.println(amount);
+  }
+
+  public void run() {
+    amount++;
+  }
+  }
+  ```
+
+  - 해당 문제를 해결하기 위해서, isAlive() 함수를 사용해서 해결한다. 해당 쓰레드가 끝나면 False를 반환한다.
+  
+  ```java
+  public class Main extends Thread {
+  public static int amount = 0;
+
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    // Wait for the thread to finish
+    while(thread.isAlive()) {
+    System.out.println("Waiting...");
+  }
+  // Update amount and print its value
+  System.out.println("Main: " + amount);
+  amount++;
+  System.out.println("Main: " + amount);
+  }
+  public void run() {
+    amount++;
+  }
+  }
+  ```
 ### Reference
 
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)  
