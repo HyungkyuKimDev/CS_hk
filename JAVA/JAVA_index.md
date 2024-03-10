@@ -2018,7 +2018,7 @@ public class Main {
 }
 ```
 
-### 3. Exceptions
+#### 3. Exceptions
 
 Java 코드 실행시, 유저의 입력 오류 또는 개발자의 코드 오류가 발생할 경우가 있다.   
 오류 발생시, Exception(예외)를 발생시킨다.
@@ -2101,7 +2101,7 @@ Java 코드 실행시, 유저의 입력 오류 또는 개발자의 코드 오류
   */
   ```
 
-  #### 4. Regural Expressions(정규 표현식)
+#### 4. Regural Expressions(정규 표현식)
 
   Regular Expressions은 문자열 내에 패턴을 찾기 위해 사용한다.   
   자바는 내장(built-in)된 Regular Expressions가 없기 때문에 java.util.regex package를 통해 사용할 수 있다.
@@ -2265,7 +2265,7 @@ Java 코드 실행시, 유저의 입력 오류 또는 개발자의 코드 오류
   }
   ```
 
- #### 6. Lambda
+#### 6. Lambda
 
 parameter를 이용해 value를 반환하는 역할. method와 유사하나 이름이 필요하지 않고 본문 안에 직접 작성하는 방식이다.   
 Java 8부터 추가되었다. 
