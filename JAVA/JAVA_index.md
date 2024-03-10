@@ -2264,6 +2264,85 @@ Java 코드 실행시, 유저의 입력 오류 또는 개발자의 코드 오류
   }
   }
   ```
+
+ #### 6. Lambda
+
+parameter를 이용해 value를 반환하는 역할. method와 유사하나 이름이 필요하지 않고 본문 안에 직접 작성하는 방식이다.   
+Java 8부터 추가되었다. 
+
+- 기본
+  ```java
+  // single parameter
+  parameter -> expression
+  
+  // more than one parameter
+  (parameter1, parameter2) -> expression
+
+  // 변수, if, for 등을 포함할 수 없고, return statement를 포함해야 한다.
+  (parameter1, parameter2) -> { code block }
+  ```
+
+- 사용 예
+  - foreach() 사용
+
+  ```java
+  import java.util.ArrayList;
+
+  public class Main {
+    public static void main(String[] args) {
+      ArrayList<Integer> numbers = new ArrayList<Integer>();
+      numbers.add(5);
+      numbers.add(9);
+      numbers.add(8);
+      numbers.add(1);
+      numbers.forEach( (n) -> { System.out.println(n); } );
+    }
+  }
+  ```
+
+    - 람다 표현식은 그 메서드와 동일한 매개변수 수와 반환 형식을 가져야 한다.
+
+    ```java
+    // Consumer 인터페이스는 단일 매개변수를 받아들이고 반환하지 않는 accept() 메서드를 가진다. 
+    // 따라서 Consumer 인터페이스의 구현체로 람다 표현식을 사용할 수 있다. 
+    // 아래는 Consumer 인터페이스를 사용하여 리스트 요소를 출력하는 간단한 예제
+    import java.util.ArrayList;
+    import java.util.function.Consumer;
+
+    public class Main {
+      public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(5);
+        numbers.add(9);
+        numbers.add(8);
+        numbers.add(1);
+        Consumer<Integer> method = (n) -> { System.out.println(n); };
+        numbers.forEach( method );
+      }
+    }
+    ```
+
+    - lambda 표현식을 method 내에서 사용하려면, 해당 method는 single method interface를 parameter로 가져야 한다. 이 interface의 method를 호출하면 lambda 표현식이 실행된다.
+
+    ```java
+    interface StringFunction {
+      String run(String str);
+    }   
+
+    public class Main {
+          public static void main(String[] args) {
+            StringFunction exclaim = (s) -> s + "!";
+            StringFunction ask = (s) -> s + "?";
+            printFormatted("Hello", exclaim);
+            printFormatted("Hello", ask);
+          }
+          public static void printFormatted(String str, StringFunction format) {
+            String result = format.run(str);
+            System.out.println(result);
+          }
+    }
+    ```
+
 ### Reference
 
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)  
