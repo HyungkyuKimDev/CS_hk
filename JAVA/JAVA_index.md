@@ -2343,6 +2343,163 @@ Java 8부터 추가되었다.
     }
     ```
 
+
+#### 7. File
+
+- java의 File 관리는 java.io package의 File class를 통해 이루어진다.
+
+- 기본
+
+  ```java
+  import java.io.File; // Import the File class
+
+  File myObj = new File("filename.txt"); // Specify the filename or directory name
+  ```
+
+- File class의 Method
+
+  |Method	|Type	|Description|
+  |:---|:----|:----|
+  |canRead()	|Boolean	|Tests whether the file is readable or not|
+  |canWrite()	|Boolean	|Tests whether the file is writable or not|
+  |createNewFile()	|Boolean	|Creates an empty file|
+  |delete()	|Boolean	|Deletes a file|
+  |exists()	|Boolean	|Tests whether the file exists|
+  |getName()	|String	|Returns the name of the file|
+  |getAbsolutePath()	|String	|Returns the absolute pathname of the file|
+  |length()	|Long	|Returns the size of the file in bytes|
+  |list()	|String[]	|Returns an array of the files in the directory|
+  |mkdir()	|Boolean	|Creates a directory|
+
+- Create
+  - createNewFile() method 사용   
+  - boolean으로 return 받는다. 해당 이름 파일을 찾으므로 try....catch문으로 사용할 필요가 있다.
+
+  ```java
+  import java.io.File;
+  import java.io.IOException;
+
+  public class CreateFile {
+    public static void main(String[] args){
+      try {
+        File myObj = new File("filename.txt"); // or 절대경로 new File("/Users/name/filename.txt");
+        if (myObj.createNewFile()) {
+        System.out.println("File created: " + myObj.getName());
+      } else {
+        System.out.println("File already exists.");
+      }
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+      }
+    }
+  }
+
+  // File created: filename.txt
+  ```
+
+- Write
+  - FileWriter class의 write() method를 사용
+  - wriete() 한뒤 close() method로 닫아줘야 함
+  
+  ```java
+  import java.io.FileWriter;   // Import the FileWriter class
+  import java.io.IOException;  // Import the IOException class to handle errors
+
+  public class WriteToFile {
+    public static void main(String[] args) {
+      try {
+        FileWriter myWriter = new FileWriter("filename.txt");
+        myWriter.write("Files in Java might be tricky, but it is fun enough!");
+        myWriter.close();
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
+    }
+  }
+
+  //Successfully wrote to the file.
+  ```
+
+- Read
+  - Scanner class 사용
+
+  ```java
+  import java.io.File;  // Import the File class
+  import java.io.FileNotFoundException;  // Import this class to handle errors
+  import java.util.Scanner; // Import the Scanner class to read text files
+
+  public class ReadFile {
+    public static void main(String[] args) {
+      try {
+        File myObj = new File("filename.txt");
+        Scanner myReader = new Scanner(myObj);
+        while (myReader.hasNextLine()) {
+          String data = myReader.nextLine();
+          System.out.println(data);
+        }
+        myReader.close();
+      } catch (FileNotFoundException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
+    }
+  }
+  ```
+
+- Get File Information
+  - File method 사용
+
+  ```java
+  import java.io.File;  // Import the File class
+
+  public class GetFileInfo { 
+    public static void main(String[] args) {
+      File myObj = new File("filename.txt");
+      if (myObj.exists()) {
+        System.out.println("File name: " + myObj.getName());
+        System.out.println("Absolute path: " + myObj.getAbsolutePath());
+        System.out.println("Writeable: " + myObj.canWrite());
+        System.out.println("Readable " + myObj.canRead());
+        System.out.println("File size in bytes " + myObj.length());
+      } else {
+        System.out.println("The file does not exist.");
+      }
+    }
+  }  
+
+  /*
+  File name: filename.txt
+  Absolute path: C:\Users\MyName\filename.txt
+  Writeable: true
+  Readable: true
+  File size in bytes: 0
+  */
+  ```
+
+- Delete
+  - 파일 또는 directory(* 비어있는 directory) 삭제하는데에는 delete() method 사용
+  
+  ```java
+  import java.io.File;  // Import the File class
+
+  public class DeleteFile {
+    public static void main(String[] args) { 
+      File myObj = new File("filename.txt"); 
+      if (myObj.delete()) { 
+        System.out.println("Deleted the file: " + myObj.getName());
+      } else {
+        System.out.println("Failed to delete the file.");
+      } 
+    } 
+  }
+  ```
+
+  - 비어있지 않은 directory를 삭제하기위해서는 재귀적으로 내부 파일을 삭제한 뒤, 빈 폴더를 삭제하는 방법이 있다.
+  
+
 ### Reference
 
 [Jun_BE.log](https://velog.io/@rlafbf222/JAVA-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC)  
